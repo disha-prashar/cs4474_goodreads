@@ -1,8 +1,8 @@
-.navbar {
+.navb{
     height: 114px;
     max-height: 162px;
     background-color: #FFF9F0;
-    
+    justify-content: center;
   }
 
   input::placeholder {
@@ -16,18 +16,17 @@
 
   .icon-contain{
     padding: 5px;
-    margin-left: 50px;
+    margin-left: 30px;
     justify-content: space-between;
-    width: 300px;
+    width: 250px;
   }
 
   .profile{
     padding: 5px;
-    margin-left: 2vw ;
-    justify-content:left;
+    margin-left: 20px ;
+    justify-content:center;
     width: 300px;
     align-items: end;
-   
   }
 
   img{
