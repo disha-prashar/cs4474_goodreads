@@ -1,0 +1,36 @@
+.navbar {
+    height: 114px;
+    max-height: 162px;
+    background-color: #FFF9F0;
+    
+  }
+
+  input::placeholder {
+    font-size: 13px;
+    color: #663A21;
+  }
+
+  .nav-link {
+    padding: 5px;
+  }
+
+  .icon-contain{
+    padding: 5px;
+    margin-left: 50px;
+    justify-content: space-between;
+    width: 300px;
+  }
+
+  .profile{
+    padding: 5px;
+    margin-left: 2vw ;
+    justify-content:left;
+    width: 300px;
+    align-items: end;
+   
+  }
+
+  img{
+    height:auto;
+    width:80%;
+  }
