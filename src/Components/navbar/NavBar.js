@@ -12,6 +12,7 @@ import notif from './notification.png';
 import mybooks from './mybooks.png';
 import './navbar.css';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import { Link, useResolvedPath, resolvedPath, useMatch } from 'react-router-dom';
 
 function NavBar() {
   return (
@@ -25,8 +26,8 @@ function NavBar() {
             </OutlinedInput>
         </FormControl>   
             <Nav className='icon-contain'>
-                <Nav.Link href='#'><img src = {home} alt = "Home" /></Nav.Link>
-                <Nav.Link href='#'><img src = {message} alt = "Messaging"/></Nav.Link>
+                <CustomLink to='/Home'><img src = {home} alt = "Home" /></CustomLink>
+                <CustomLink to='/Messages'><img src = {message} alt = "Messages"/></CustomLink>
                 <Nav.Link href='#'><img src = {mybooks} alt = "My Books"/></Nav.Link>
                 <Nav.Link href='#'><img src = {notif} alt = "Notifications"/></Nav.Link>
             </Nav>
@@ -37,6 +38,19 @@ function NavBar() {
         
     </Navbar>
   );
+}
+
+function CustomLink({to,children, ...props}) {
+    const resolvedPath = useResolvedPath(to);
+    const isActive = useMatch({path: resolvedPath.pathname, end: true})
+    return (
+        <li className={isActive ? "active" : ""}>
+            <Link to={to} {...props}>
+                {children}
+            </Link>
+        </li>
+
+    )
 }
 
 export default NavBar;

@@ -1,0 +1,16 @@
+.mainPage{ 
+    background-color: #FFF9F0;
+    justify-content: center;
+  }
+
+.messagesHeading {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column; /* Stacks the divs vertically */
+
+
+}
+
