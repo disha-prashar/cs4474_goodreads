@@ -1,0 +1,49 @@
+.readingChallengeSection{
+    box-sizing:border-box;
+    flex-direction: row;
+}
+
+.joinChallenge{
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 100px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.challengeImage{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.p1{
+    font-family: "DM Sans", sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+    color: #663A21;
+}
+
+.p2{
+    font-family: "DM Sans", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    /* color: #AD9080; */
+}
+
+.signUpButton{
+    margin-top: 20px;
+    font-size: 20px;
+    width: 150px;
+    background-color: #663A21;
+    color: #FFF9F0;
+}
+
+.loginButton{
+    margin-top: 20px;
+    font-size: 20px;
+    width: 150px;
+    background-color: #FFF9F0;
+    color: #663A21;
+}
