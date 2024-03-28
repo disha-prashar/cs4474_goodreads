@@ -28,14 +28,15 @@ body{
     border-radius: 12px;
 }
 
-.dropdown-button:active{
+.dropdown-menu:active{
     color: #663A21 !important;
 }
 
-.dropdown-button{
+.dropdown{
     color: #663A21 !important;
 }
 
-.dropdown-button:hover{
+.dropdown-menu:hover{
     color: #663A21 !important;
 }
+
