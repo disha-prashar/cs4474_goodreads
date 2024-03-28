@@ -1,8 +1,11 @@
 import React from 'react';
+import './Home.css';
+import ReadingChallengeSection from '../../Components/HomepageComponents/ReadingChallenge/ReadingChallenge';
 
 function Home() {
   return (
-    <div>
+    <div className='mainPage'>
+        <ReadingChallengeSection />
     </div>
   );
 }

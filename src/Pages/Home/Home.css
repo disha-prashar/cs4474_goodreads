@@ -1,0 +1,6 @@
+
+.readingChallengeSection{
+    display:flex;
+    flex-direction:row;
+    table-layout: fixed;
+}
