@@ -7,6 +7,8 @@ hr{
 body{
     background-color: #FFF9F0;
     justify-content: center;
+    overflow-y: scroll;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .menu{
@@ -28,6 +30,18 @@ body{
     border-radius: 12px;
 }
 
+h2{
+    font-size: 18px;
+    margin-top: 50px;
+    font-weight: bold;
+    color: #663A21;
+}
+
+h1{
+    color: #663A21;
+    font-size: 30px;
+}
+
 .dropdown-menu:active{
     color: #663A21 !important;
 }
@@ -40,3 +54,25 @@ body{
     color: #663A21 !important;
 }
 
+
+  .scrolling-wrapper {
+    
+    
+    display: flex;
+    align-items: center;
+    height: 230px;
+    margin-right: 50px;
+    padding-left: 15px;
+    
+    background: #FFFFFF;
+    border-radius: 12px;
+
+  
+    .card {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 10px;
+      border-style: none;
+      width: 166px;
+    }
+  }
