@@ -15,7 +15,7 @@ const readingLists = [
 const FavouriteReadingLists = () => {
   return (
     <div className="favouriteReadingListsSection">
-      <h2 className="favouriteReadingListsTitle">Our favourite reading lists</h2>
+      <h2 className="favouriteReadingListsTitle">Our Favourite Reading Lists</h2>
       <div className="readingListsContainer">
         {readingLists.map(list => (
           <div className="readingListCard" key={list.id}>
