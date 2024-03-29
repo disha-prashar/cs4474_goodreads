@@ -1,0 +1,56 @@
+/* TrendingThisWeek.css */
+
+.trendingSection {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 20px; /* Adjust padding to match layout, if necessary */
+  margin-top: 50px; /* Consistent spacing with the ReadingChallengeSection */
+}
+
+.trendingTitle {
+  font-family: "DM Sans", sans-serif;
+  font-size: 42px; /* Large title to match the ReadingChallengeSection */
+  font-weight: bold;
+  color: #663A21; /* Consistent color scheme */
+  margin-left: 200px; /* Aligning with the text in the ReadingChallengeSection */
+  margin-bottom: 20px; /* Space before the book list starts */
+}
+
+.trendingBooksContainer {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px; /* Adjust as needed */
+  margin-right: 100px; /* Consistent with the ReadingChallengeSection */
+}
+
+.book {
+  width: 180px; /* Adjust width as needed */
+  flex: none; /* Prevent flexbox from shrinking the item */
+  border-radius: 8px; /* Consistent with button styling */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  background-color: #FFF9F0; /* Background color consistent with buttons */
+}
+
+.bookCover {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bookTitle {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px; /* Adjust to match layout */
+  font-weight: bold;
+  color: #663A21; /* Consistent color scheme */
+  margin: 8px; /* Adjust as needed */
+}
+
+.bookAuthor {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px; /* Adjust to match layout */
+  color: #663A21; /* Consistent color scheme */
+  margin: 0 8px 8px; /* Adjust as needed */
+}
+
