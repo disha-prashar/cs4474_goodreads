@@ -1,0 +1,64 @@
+/* FavoriteReadingLists.css */
+
+.favouriteReadingListsSection {
+  padding: 20px; /* Adjust padding to match other sections */
+  background-color: #fff; /* Assuming a white background, adjust as needed */
+  font-family: 'DM Sans', sans-serif; /* Consistent with other text */
+  color: #663A21; /* Brownish text color as seen in other sections */
+}
+
+.favouriteReadingListsTitle {
+  font-size: 42px; /* Large, consistent title size */
+  font-weight: bold;
+  color: #663A21; /* Title color */
+  margin: 50px 200px; /* Top margin and horizontal padding */
+}
+
+.readingListsContainer {
+  display: flex;
+  gap: 20px; /* Spacing between cards */
+  overflow-x: auto; /* For horizontal scrolling */
+  margin-bottom: 50px; /* Space at the bottom of the section */
+}
+
+.readingListCard {
+  flex: none; /* Cards don't grow or shrink */
+  background-color: #FFF9F0; /* Off-white card background */
+  border: 1px solid #ddd; /* Light border for the cards */
+  border-radius: 8px; /* Rounded corners */
+  width: 240px; /* Width of the card, adjust as needed */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Consistent shadow for depth */
+}
+
+.readingListImage {
+  width: 100%; /* Full width of the card */
+  border-top-left-radius: 8px; /* Rounded corners at the top of the image */
+  border-top-right-radius: 8px;
+}
+
+.readingListTitle {
+  font-size: 20px; /* Title size within card */
+  margin: 16px; /* Margin around text */
+}
+
+.readingListDescription {
+  font-size: 16px; /* Description text size */
+  margin: 0 16px 16px; /* Margin around text */
+}
+
+.moreButton {
+  font-size: 20px; /* Consistent button text size */
+  padding: 10px 20px; /* Padding inside the button */
+  background-color: #663A21; /* Button color */
+  color: #FFF9F0; /* Button text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Slight rounding of corners */
+  cursor: pointer; /* Hand cursor on hover */
+  margin-left: 200px; /* Align the button with the title */
+}
+
+/* Add hover effects for interactive elements */
+.moreButton:hover {
+  background-color: #8c6d4d; /* Darker shade on hover */
+}
+

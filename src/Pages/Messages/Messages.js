@@ -1,19 +1,22 @@
 import React from 'react';
 import './Messages.css';
 import Sidebar from '../../Components/MessagingSidebar/MessagingSidebar';
-import ChatHeader from "../../Components/Chat/Header";
-import ChatFooter from "../../Components/Chat/Footer";
-// export {default as ChatHeader} from "../../Components/Chat/Header";
-// export {default as ChatFooter} from "../../Components/Chat/Footer";
+import DMs from '../../Components/Chat/DMs';
+import Conversation from '../../Components/Chat/Conversation';
 
 function Messages() {
   return (
     <div className='mainPage'>
+      <div style={{ display: 'flex' }}>
         <Sidebar />
-        <ChatHeader />
-        <ChatFooter />
+          <div style={{height:'fit-content'}}>
+            <DMs/>
+          </div>
+          <div style={{display: 'flex', flexDirection: 'column', flex: '1'}}>
+            <Conversation></Conversation>
+          </div>
+      </div>
     </div>
-
   );
 }
 

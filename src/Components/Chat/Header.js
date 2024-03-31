@@ -81,8 +81,6 @@ const ChatHeader = () => {
       p={2}
       width={"100%"}
       sx={{
-        backgroundColor:
-          theme.palette.mode === "light" ? "#F8FAFF" : theme.palette.background,
         boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
       }}
     >
@@ -113,22 +111,22 @@ const ChatHeader = () => {
             </StyledBadge>
           </Box>
           <Stack spacing={0.2}>
-            <Typography variant="subtitle2">{faker.name.fullName()}</Typography>
-            <Typography variant="caption">Online</Typography>
+            <Typography variant="subtitle2" fontSize={18} fontWeight={"bold"} color={'#663A21'} fontFamily={"DM Sans"}>{faker.name.fullName()}</Typography>
+            <Typography variant="caption" color={'#663A21'} fontFamily={"DM Sans"}>Online</Typography>
           </Stack>
         </Stack>
         <Stack direction={"row"} alignItems="center" spacing={isMobile ? 1 : 3}>
           <IconButton>
-            <VideoCamera />
+            <VideoCamera color="#663A21" />
           </IconButton>
           <IconButton>
-            <Phone />
+            <Phone color={'#663A21'}/>
           </IconButton>
-          {!isMobile && (
+          {/* {!isMobile && (
             <IconButton>
-              <MagnifyingGlass />
+              <MagnifyingGlass color={'#663A21'}/>
             </IconButton>
-          )}
+          )} */}
 
           <Divider orientation="vertical" flexItem />
           <IconButton
@@ -140,7 +138,7 @@ const ChatHeader = () => {
             aria-expanded={openConversationMenu ? "true" : undefined}
             onClick={handleClickConversationMenu}
           >
-            <CaretDown />
+            <CaretDown color={'#663A21'}/>
           </IconButton>
           <Menu
             MenuListProps={{
