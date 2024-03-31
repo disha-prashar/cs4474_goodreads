@@ -1,0 +1,50 @@
+.bookCategoriesSection{
+    box-sizing:border-box;
+    flex-direction: row;
+    margin-left: 200px;
+    /* background: white; */
+}
+.categories{
+    margin-top: 50px;
+    margin-right: 200px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.tabs{
+    margin-right: 10px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.artPic{
+    width: 200px;
+}
+
+.p1{
+    font-family: "DM Sans", sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+    color: #663A21;
+}
+
+.p2{
+    font-family: "DM Sans", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    /* color: #AD9080; */
+}
+
+.signUpButton{
+    margin-top: 20px;
+    font-size: 20px;
+    width: 150px;
+    background-color: #663A21;
+    color: #FFF9F0;
+}
+
+.loginButton{
+    margin-top: 20px;
+    font-size: 20px;
+    width: 150px;
+    background-color: #FFF9F0;
+    color: #663A21;
+}
