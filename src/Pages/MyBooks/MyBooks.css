@@ -1,0 +1,78 @@
+hr{
+    color: #663A21;
+    border-width: 2px;
+    border-color: #663A21;;
+}
+
+body{
+    background-color: #FFF9F0;
+    justify-content: center;
+    overflow-y: scroll;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.menu{
+    justify-self: left;
+  
+    align-self: left;
+    border-style: solid;
+}
+
+/* Rectangle 29 */
+.rect{
+    width: 1037px;
+    height: 216px;
+    padding: 50px;
+
+    background: #FFFFFF;
+    border-bottom: 8px solid #9E896F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+
+h2{
+    font-size: 18px;
+    margin-top: 50px;
+    font-weight: bold;
+    color: #663A21;
+}
+
+h1{
+    color: #663A21;
+    font-size: 30px;
+}
+
+.dropdown-menu:active{
+    color: #663A21 !important;
+}
+
+.dropdown{
+    color: #663A21 !important;
+}
+
+.dropdown-menu:hover{
+    color: #663A21 !important;
+}
+
+
+  .scrolling-wrapper {
+    
+    
+    display: flex;
+    align-items: center;
+    height: 230px;
+    margin-right: 50px;
+    padding-left: 15px;
+    
+    background: #FFFFFF;
+    border-radius: 12px;
+
+  
+    .card {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 10px;
+      border-style: none;
+      width: 166px;
+    }
+  }

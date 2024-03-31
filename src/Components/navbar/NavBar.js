@@ -28,7 +28,7 @@ function NavBar() {
             <Nav className='icon-contain'>
                 <CustomLink to='/Home'><img src = {home} alt = "Home" /></CustomLink>
                 <CustomLink to='/Messages'><img src = {message} alt = "Messages"/></CustomLink>
-                <Nav.Link href='#'><img src = {mybooks} alt = "My Books"/></Nav.Link>
+                <CustomLink to='/MyBooks'><img src = {mybooks} alt = "MyBooks"/></CustomLink>
                 <Nav.Link href='#'><img src = {notif} alt = "Notifications"/></Nav.Link>
             </Nav>
         <Nav className='profile'>
