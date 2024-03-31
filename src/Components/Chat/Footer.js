@@ -185,7 +185,7 @@ import {
               sx={{
                 height: 48,
                 width: 48,
-                backgroundColor: theme.palette.primary.main,
+                backgroundColor: '#663A21',
                 borderRadius: 1.5,
               }}
             >
