@@ -12,6 +12,7 @@ npm install reactstrap bootstrap
 npm install --save phosphor-react
 npm install --save-dev @faker-js/faker
 npm install --save emoji-mart @emoji-mart/data @emoji-mart/react
+npm install styled-components
 
 # Run the development server
 npm start
