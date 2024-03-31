@@ -21,6 +21,8 @@ const read_books = [
     ["The Hunger Games" ,"Suzanne Collins", 3.95, "HG1","It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute."]
 ]
 
+let temp = "";
+
 function MyBooks() {
     return (
         <div> 
@@ -39,7 +41,7 @@ function MyBooks() {
                         <div className='bookshelf'>
                             <h2>Reading</h2>
                             <div class="scrolling-wrapper">
-                                <div class="card"><img src = {HG3} alt = "Hunger Games 3"/></div>
+                                <div class="card-1"><img src = {HG3} alt = "Hunger Games 3"/></div>
                                 <div class="card"><h2>Card</h2></div>
                                 <div class="card"><h2>Card</h2></div>
                                 <div class="card"><h2>Card</h2></div>
