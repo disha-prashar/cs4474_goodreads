@@ -80,9 +80,6 @@ const ChatHeader = () => {
     <Box
       p={2}
       width={"100%"}
-      sx={{
-        boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
-      }}
     >
       <Stack
         alignItems={"center"}
@@ -97,7 +94,11 @@ const ChatHeader = () => {
           }}
           spacing={2}
           direction="row"
+          alignItems={"center"}
         >
+          <IconButton>
+            <Phone color={'#663A21'}/>
+          </IconButton>
           <Box>
             <StyledBadge
               overlap="circular"
@@ -109,26 +110,22 @@ const ChatHeader = () => {
             >
               <Avatar alt={faker.name.fullName()} src={faker.image.avatar()} />
             </StyledBadge>
+            <Stack direction="column" alignItems="center">
+    <Typography variant="subtitle2" fontSize={18} fontWeight={"bold"} color={'#663A21'} fontFamily={"DM Sans"}>
+      {faker.name.fullName()}
+    </Typography>
+    <Typography variant="caption" color={'#663A21'} fontFamily={"DM Sans"}>
+      Online
+    </Typography>
+  </Stack>
           </Box>
-          <Stack spacing={0.2}>
-            <Typography variant="subtitle2" fontSize={18} fontWeight={"bold"} color={'#663A21'} fontFamily={"DM Sans"}>{faker.name.fullName()}</Typography>
-            <Typography variant="caption" color={'#663A21'} fontFamily={"DM Sans"}>Online</Typography>
-          </Stack>
-        </Stack>
-        <Stack direction={"row"} alignItems="center" spacing={isMobile ? 1 : 3}>
           <IconButton>
             <VideoCamera color="#663A21" />
           </IconButton>
-          <IconButton>
-            <Phone color={'#663A21'}/>
-          </IconButton>
-          {/* {!isMobile && (
-            <IconButton>
-              <MagnifyingGlass color={'#663A21'}/>
-            </IconButton>
-          )} */}
+          </Stack>
 
-          <Divider orientation="vertical" flexItem />
+
+          {/* <Divider orientation="vertical" flexItem /> */}
           <IconButton
             id="conversation-positioned-button"
             aria-controls={
@@ -177,7 +174,6 @@ const ChatHeader = () => {
             </Box>
           </Menu>
         </Stack>
-      </Stack>
     </Box>
   );
 };
