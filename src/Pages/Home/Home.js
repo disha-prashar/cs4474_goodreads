@@ -4,6 +4,7 @@ import ReadingChallengeSection from '../../Components/HomepageComponents/Reading
 import TrendingThisWeek from '../../Components/HomepageComponents/TrendingThisWeek/TrendingThisWeek';
 import BookCategoriesTabs from '../../Components/HomepageComponents/BookCategories/BookCategories';
 import FavouriteReadingLists from '../../Components/HomepageComponents/FavouriteReadingLists/FavouriteReadingLists';
+import AuthorProgramSection from '../../Components/HomepageComponents/AuthorProgram/AuthorProgram';
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
         <TrendingThisWeek />
         <BookCategoriesTabs />
         <FavouriteReadingLists />
+        <AuthorProgramSection />
     </div>
   );
 }
