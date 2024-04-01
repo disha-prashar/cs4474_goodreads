@@ -32,7 +32,7 @@ function MyBooks() {
             </div>
             <Container fluid>
                 <Row>
-                    <Col xs = {3}>
+                    <Col xs = {3} style={{ paddingLeft: '50px' }}>
                         <div>
                             <MyBooksSidebar />
                         </div>
