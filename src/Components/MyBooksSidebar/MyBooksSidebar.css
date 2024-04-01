@@ -1,0 +1,9 @@
+/* MyBooksSidebar.css */
+
+/* Targets all text within the Nav component */
+.nav.flex-column,
+.nav.flex-column .nav-link,
+.nav.flex-column .dropdown-item,
+.nav.flex-column .dropdown-toggle {
+    color: #663A21 !important; /* Ensures this color override applies */
+}
