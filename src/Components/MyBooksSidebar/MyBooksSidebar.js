@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import '../../Pages/MyBooks/MyBooks.css';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import './MyBooksSidebar.css';
 
 function MyBooksSidebar() {
     return (
