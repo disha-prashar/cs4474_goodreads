@@ -5,6 +5,7 @@ import TrendingThisWeek from '../../Components/HomepageComponents/TrendingThisWe
 import BookCategoriesTabs from '../../Components/HomepageComponents/BookCategories/BookCategories';
 import FavouriteReadingLists from '../../Components/HomepageComponents/FavouriteReadingLists/FavouriteReadingLists';
 import AuthorProgramSection from '../../Components/HomepageComponents/AuthorProgram/AuthorProgram';
+import BestBooksSection from '../../Components/HomepageComponents/BestBooks/BestBooks';
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
         <BookCategoriesTabs />
         <FavouriteReadingLists />
         <AuthorProgramSection />
+        <BestBooksSection />
     </div>
   );
 }

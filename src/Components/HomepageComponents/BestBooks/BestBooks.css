@@ -1,0 +1,53 @@
+.bestBooksSection { /* outer container */
+    display: flex;
+    height: 400px;
+}
+
+.announcement-container {
+    background-color: #AD9080;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-container {
+    flex: 1; /* Make the carousel container flexible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0 20px; */
+    /* flex: 0 0 50%; */
+}
+
+.choice-logo {
+    height: 100px;
+    width: auto;
+    padding-left: 120px;
+}
+
+.image-container {
+    margin-right: 30px;
+}
+
+.section1 {
+    display: flex;
+    align-items: center;
+}
+
+.para1 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 42px;
+    font-weight: normal;
+    font-style: normal;
+    color: #663A21;
+    padding-right: 120px;
+}
+
+.para2 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    padding-left: 120px;
+    padding-right: 120px;
+}

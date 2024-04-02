@@ -1,0 +1,30 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    height: 400px;
+}
+
+.items-container {
+    display: flex;
+}
+
+.item {
+    flex: 0 0 auto;
+    margin: 0 20px;
+    transition: all 0.1s ease;
+}
+
+.item img {
+    width: 200px;
+}
+
+.item.active {
+    transform: scale(1.2);
+    /* Example: Active item is larger */
+}
+
+.arrow {
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+}
