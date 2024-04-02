@@ -8,6 +8,7 @@ import HG1 from './BookImages/hunger_games_1.jpg';
 import HG2 from './BookImages/hunger_games_2.jpg';
 import HG3 from './BookImages/hunger_games_3.jpg';
 import HG4 from './BookImages/hunger_games_4.jpg';
+import { Link, useResolvedPath, resolvedPath, useMatch } from 'react-router-dom';
 
 const reading_books = [
     ["The Hunger Games: Mockingjay", "Suzanne Collins", 3.95, "HG3","It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute." ]
@@ -39,9 +40,18 @@ function MyBooks() {
                     </Col>
                     <Col xs = {9}>
                         <div className='bookshelf'>
-                            <h2>Reading</h2>
+                            <Container fluid style = {{paddingTop: 10}}>
+                                <Row >
+                                    <Col xs = {10}>
+                                        <h2>Reading</h2>
+                                    </Col>
+                                    <Col  className = 'deck-head'>
+                                        <Link to='./ReadingView' className='link-style'>View All</Link>
+                                    </Col>
+                                </Row>
+                            </Container>
                             <div class="scrolling-wrapper">
-                                <div class="card-1"><img src = {HG3} alt = "Hunger Games 3"/></div>
+                                <div class="card"><img src = {HG3} alt = "Hunger Games 3"/></div>
                                 <div class="card"><h2>Card</h2></div>
                                 <div class="card"><h2>Card</h2></div>
                                 <div class="card"><h2>Card</h2></div>

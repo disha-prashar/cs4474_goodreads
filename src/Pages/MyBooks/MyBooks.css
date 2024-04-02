@@ -76,3 +76,13 @@ h1{
       width: 166px;
     }
   }
+
+  .link-style{
+    color: #663A21;
+  }
+
+  .deck-head{
+    justify-content: right;
+    align-items: center;
+    padding-top: 50px;
+  }
