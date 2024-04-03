@@ -9,6 +9,7 @@ import HG2 from './BookImages/hunger_games_2.jpg';
 import HG3 from './BookImages/hunger_games_3.jpg';
 import HG4 from './BookImages/hunger_games_4.jpg';
 import { Link, useResolvedPath, resolvedPath, useMatch } from 'react-router-dom';
+import { OverlayTrigger, Popover} from 'react-bootstrap';
 
 const reading_books = [
     ["The Hunger Games: Mockingjay", "Suzanne Collins", 3.95, "HG3","It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute." ]
@@ -21,6 +22,26 @@ const read_books = [
     ["The Hunger Games: Catching Fire" ,"Suzanne Collins", 3.95, "HG2","It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute."],
     ["The Hunger Games" ,"Suzanne Collins", 3.95, "HG1","It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute."]
 ]
+
+const hungerGames2Popover = (
+    <Popover id="popover-hunger-games" className="book-details-popover">
+      <Popover.Body>
+        <div className="popover-content">
+          <h3 className="popover-title">Catching Fire</h3>
+          <p className="popover-author">Suzanne Collins</p>
+          <div className="popover-rating">
+            <span className="stars">★ 3.95</span>
+          </div>
+          <p className="popover-summary">
+            In the ruins of a place once known as North America lies the nation of Panem...
+          </p>
+          <div className="popover-actions">
+            <button className="btn-more-info">More Information</button>
+          </div>
+        </div>
+      </Popover.Body>
+    </Popover>
+  );
 
 let temp = "";
 
@@ -69,7 +90,9 @@ function MyBooks() {
                         <div className='bookshelf'>
                             <h2>Read</h2>
                             <div class="scrolling-wrapper">
-                                <div class="card"><img src = {HG2} alt = "Hunger Games 1"/></div>
+                                <OverlayTrigger trigger="hover" placement="top" overlay={hungerGames2Popover}> 
+                                    <div class="card"><img src = {HG2} alt = "Hunger Games 1"/></div>
+                                </OverlayTrigger>
                                 <div class="card"><img src = {HG1} alt = "Hunger Games 2"/></div>
 
                                 <div class="card"><h2>Card</h2></div>
