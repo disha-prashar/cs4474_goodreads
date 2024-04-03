@@ -7,7 +7,7 @@ import { faker } from '@faker-js/faker';
 import { ChatList } from '../Data';
 import ChatElement from './ChatElement';
 
-const DMs = () => {
+const DMs = (messagingView) => {
   const theme = useTheme();
   return (    
     <Box sx={{

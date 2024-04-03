@@ -80,26 +80,24 @@ const ChatHeader = () => {
     <Box
       p={2}
       width={"100%"}
+      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
     >
       <Stack
+        onClick={() => {
+          searchParams.set("open", true);
+          setSearchParams(searchParams);
+        }}
+        spacing={2}
+        direction="row"
         alignItems={"center"}
-        direction={"row"}
-        sx={{ width: "100%", height: "100%" }}
-        justifyContent="space-between"
       >
-        <Stack
-          onClick={() => {
-            searchParams.set("open", true);
-            setSearchParams(searchParams);
-          }}
-          spacing={2}
-          direction="row"
-          alignItems={"center"}
-        >
-          <IconButton>
-            <Phone color={'#663A21'}/>
-          </IconButton>
-          <Box>
+        <IconButton sx={{ fontSize: 50 }}>
+          <Phone color={'#663A21'}/>
+        </IconButton>
+
+        {/*  Avatar picture on top of name */}
+        <Box>
+          <Stack direction="column" alignItems="center">
             <StyledBadge
               overlap="circular"
               anchorOrigin={{
@@ -108,35 +106,28 @@ const ChatHeader = () => {
               }}
               variant="dot"
             >
-              <Avatar alt={faker.name.fullName()} src={faker.image.avatar()} />
+            <Avatar sx={{ width: 80, height: 80 }} alt={faker.name.fullName()} src={faker.image.avatar()} />
             </StyledBadge>
-            <Stack direction="column" alignItems="center">
-    <Typography variant="subtitle2" fontSize={18} fontWeight={"bold"} color={'#663A21'} fontFamily={"DM Sans"}>
-      {faker.name.fullName()}
-    </Typography>
-    <Typography variant="caption" color={'#663A21'} fontFamily={"DM Sans"}>
-      Online
-    </Typography>
-  </Stack>
-          </Box>
-          <IconButton>
-            <VideoCamera color="#663A21" />
-          </IconButton>
+            <Typography variant="subtitle2" fontSize={18} fontWeight={"bold"} color={'#663A21'} fontFamily={"DM Sans"}>
+              {faker.name.fullName()}
+            </Typography>
           </Stack>
+        </Box>
 
-
-          {/* <Divider orientation="vertical" flexItem /> */}
-          <IconButton
-            id="conversation-positioned-button"
-            aria-controls={
-              openConversationMenu ? "conversation-positioned-menu" : undefined
-            }
-            aria-haspopup="true"
-            aria-expanded={openConversationMenu ? "true" : undefined}
-            onClick={handleClickConversationMenu}
-          >
-            <CaretDown color={'#663A21'}/>
-          </IconButton>
+        <IconButton sx={{ fontSize: 50 }}>
+          <VideoCamera color="#663A21" />
+        </IconButton>
+      </Stack>
+      <IconButton
+        id="conversation-positioned-button"
+        aria-controls={
+          openConversationMenu ? "conversation-positioned-menu" : undefined
+        }
+        aria-haspopup="true"
+        aria-expanded={openConversationMenu ? "true" : undefined}
+        onClick={handleClickConversationMenu}>
+          <CaretDown color={'#663A21'}/>
+        </IconButton>
           <Menu
             MenuListProps={{
               "aria-labelledby": "fade-button",
@@ -154,8 +145,7 @@ const ChatHeader = () => {
             transformOrigin={{
               vertical: "top",
               horizontal: "right",
-            }}
-          >
+            }}>
             <Box p={1}>
               <Stack spacing={1}>
                 {Conversation_Menu.map((el) => (
@@ -173,7 +163,6 @@ const ChatHeader = () => {
               </Stack>
             </Box>
           </Menu>
-        </Stack>
     </Box>
   );
 };
