@@ -33,7 +33,7 @@ body{
 h2{
     font-size: 18px;
     margin-top: 50px;
-    font-weight: bold;
+    
     color: #663A21;
 }
 
@@ -60,7 +60,7 @@ h1{
     
     display: flex;
     align-items: center;
-    height: 230px;
+    height: 300px;
     margin-right: 50px;
     padding-left: 15px;
     
@@ -70,10 +70,11 @@ h1{
   
     .card {
       display: inline-block;
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: 15px;
+      margin-right: 15px;
       border-style: none;
       width: 166px;
+      height: 243px;
     }
   }
 
@@ -85,4 +86,32 @@ h1{
     justify-content: right;
     align-items: center;
     padding-top: 50px;
+    padding-left: 50px;
   }
+
+
+
+
+
+  .cardi {
+   
+    width: 166px;
+    
+    margin-bottom: 7px;
+   
+  }
+
+  .bookR {
+    display: inline-block;
+    margin: 50px;
+    width: 166px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .stars {
+    margin-left: 35px;
+    
+  }
+  
