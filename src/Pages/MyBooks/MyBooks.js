@@ -12,9 +12,31 @@ import { Link, useResolvedPath, resolvedPath, useMatch } from 'react-router-dom'
 import FetchData from './FetchData';
 import book_data from './bookData';
 import { Rating } from "@mui/material";
+import { OverlayTrigger, Popover} from 'react-bootstrap';
 
 
 
+const hungerGames2Popover = (
+    <Popover id="popover-hunger-games" className="book-details-popover">
+      <Popover.Body>
+        <div className="popover-content">
+          <h3 className="popover-title">Catching Fire</h3>
+          <p className="popover-author">Suzanne Collins</p>
+          <div className="popover-rating">
+            <span className="stars">★ 3.95</span>
+          </div>
+          <p className="popover-summary">
+            In the ruins of a place once known as North America lies the nation of Panem...
+          </p>
+          <div className="popover-actions">
+            <button className="btn-more-info">More Information</button>
+          </div>
+        </div>
+      </Popover.Body>
+    </Popover>
+  );
+
+let temp = "";
 
 function MyBooks() {
     const data = book_data;
@@ -91,9 +113,11 @@ function MyBooks() {
                                 </Row>
                             </Container>
                             <div class="scrolling-wrapper">
-                                <div class="card"><img src = {HG2} alt = "Hunger Games 1"/></div>
+                                <OverlayTrigger trigger="hover" placement="top" overlay={hungerGames2Popover}> 
+                                    <div class="card"><img src = {HG2} alt = "Hunger Games 1"/></div>
+                                </OverlayTrigger>
                                 <div class="card"><img src = {HG1} alt = "Hunger Games 2"/></div>
-                                
+
                                 <div class="card"><h2>Card</h2></div>
                             </div>
                         </div>
