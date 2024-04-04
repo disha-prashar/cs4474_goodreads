@@ -70,7 +70,7 @@ function MyBooks() {
                                 {data.reading_books.map((b) => {
                                     return (
                                         <div className="card">
-                                            <img className = "card" src={b.image} alt ="book"/> 
+                                            <img src={b.image} alt ="book"/> 
                                             <Rating className ="stars" value={b.rating} precision={0.05} size = "small"readOnly/>
                                         </div>
                                         
@@ -93,7 +93,7 @@ function MyBooks() {
                                 {data.want_to_read.map((b) => {
                                     return (
                                         <div className="card">
-                                            <img className = "card" src={b.image} alt ="book"/> 
+                                            <img src={b.image} alt ="book"/> 
                                             <Rating className ="stars" value={b.rating} precision={0.05} size = "small"readOnly/>
                                         </div>
                                         
