@@ -16,6 +16,8 @@ import { CaretDown, MagnifyingGlass, Phone, VideoCamera } from "phosphor-react";
 import { faker } from "@faker-js/faker";
 import { useSearchParams } from "react-router-dom";
 import useResponsive from "../Hooks/useResponsive";
+import phoneIcon from '../../Components/Chat/phone.png';
+import videoIcon from '../../Components/Chat/video.png';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -62,9 +64,7 @@ const Conversation_Menu = [
 ];
 
 const ChatHeader = () => {
-  const isMobile = useResponsive("between", "md", "xs", "sm");
   const [searchParams, setSearchParams] = useSearchParams();
-  const theme = useTheme();
 
   const [conversationMenuAnchorEl, setConversationMenuAnchorEl] =
     React.useState(null);
@@ -92,7 +92,7 @@ const ChatHeader = () => {
         alignItems={"center"}
       >
         <IconButton sx={{ fontSize: 50 }}>
-          <Phone color={'#663A21'}/>
+          <img src={phoneIcon} style={{height: 50, width: 50}}></img>
         </IconButton>
 
         {/*  Avatar picture on top of name */}
@@ -115,7 +115,7 @@ const ChatHeader = () => {
         </Box>
 
         <IconButton sx={{ fontSize: 50 }}>
-          <VideoCamera color="#663A21" />
+          <img src={videoIcon} style={{height: 50, width: 50}}></img>
         </IconButton>
       </Stack>
       <IconButton

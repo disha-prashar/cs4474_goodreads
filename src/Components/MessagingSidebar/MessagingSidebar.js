@@ -1,6 +1,6 @@
 // Sidebar.js
 import React, { useEffect, useState } from 'react';
-import './MessagingSidebar.css'; // Import CSS for styling if needed
+import './MessagingSidebar.css'; 
 import dms from './dms.png';
 import updates from './book.png';
 import groupChat from './conversation.png';
@@ -9,9 +9,8 @@ import DMs from '../../Components/Chat/DMs';
 import Conversation from '../../Components/Chat/Conversation';
 
 function Sidebar() {
-  const [selectedIcon, setSelectedIcon] = React.useState('dms');
+  const [selectedIcon, setSelectedIcon] = React.useState('direct messaging');
 
-  // Function to handle icon selection
   const handleIconClick = (icon) => {
     setSelectedIcon(icon);
   };
@@ -20,17 +19,15 @@ function Sidebar() {
     <>
       <div className="sidebar">
           <div className='icon'>
-        <ul>
+            <ul>
           <li href='#'><AccountCircleOutlinedIcon style={{color: "#663A21", height: "48px", width: "48px"}}/></li>
-          <li className='iconButton' style={selectedIcon === 'dms' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('dms')}><img src={dms} alt='DMs'/></li>
-          <li className='iconButton' style={selectedIcon === 'bookClubs' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('bookClubs')}><img src={groupChat} alt='Book Clubs'/> </li>
-          <li className='iconButton' style={selectedIcon === 'authorUpdates' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('authorUpdates')}><img src={updates} alt='Author Updates'/> </li>
+          <li className='iconButton' style={selectedIcon === 'direct messaging' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('direct messaging')}><img src={dms} alt='DMs'/></li>
+          <li className='iconButton' style={selectedIcon === 'book clubs' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('book clubs')}><img src={groupChat} alt='Book Clubs'/> </li>
+          <li className='iconButton' style={selectedIcon === 'author updates' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('author updates')}><img src={updates} alt='Author Updates'/> </li>
         </ul>
         </div>
       </div>
-    <div style={{height:'fit-content'}}>
-      <DMs/>
-    </div>
+      <DMs messagingView={selectedIcon}/>
     <div style={{display: 'flex', flexDirection: 'column', flex: '1'}}>
       <Conversation></Conversation>
     </div>
