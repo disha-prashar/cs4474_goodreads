@@ -26,10 +26,10 @@
     "want_to_read":
     [
     {
-        "title": "The Hunger Games: Mockingjay",
+        "title": "The Ballad of Songbirds and Snakes (A Hunger Games Novel)",
         "author": "Suzanne Collins",
-        "rating": 3,
-        "image": "https://www.google.com/imgres?q=hunger%20games%20mockingjay%20book&imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61n5pTMvmpL._AC_UF1000%2C1000_QL80_.jpg&imgrefurl=https%3A%2F%2Fwww.amazon.ca%2FMockingjay-Final-Book-Hunger-Games%2Fdp%2F0545663261&docid=BxG7QiWYCHGQuM&tbnid=7SNUdjKbJGWuqM&vet=12ahUKEwi7nt2qyqSFAxWn5ckDHWGlCYIQM3oECBYQAA..i&w=660&h=1000&hcb=2&ved=2ahUKEwi7nt2qyqSFAxWn5ckDHWGlCYIQM3oECBYQAA",
+        "rating": 4.5,
+        "image": "https://m.media-amazon.com/images/I/81EGcrHKG-L._SY522_.jpg",
         "description": "It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute."
     },
     {
@@ -47,11 +47,32 @@
         "description": "You must be our new neighbors Mrs. Lowell gushes and waves across the picket fence. I clutch my daughter's hand and smile back: but the second Mrs. Lowell sees my husband a strange expression crosses her face. In that moment I make a promise. We finally have a family home. My past is far, far behind us. And I'll do anything to keep it that way…"
     },
     {
-        "title": "The Hunger Games: Mockingjay",
-        "author": "Suzanne Collins",
-        "rating": 5,
-        "image": "https://www.google.com/imgres?q=hunger%20games%20mockingjay%20book&imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61n5pTMvmpL._AC_UF1000%2C1000_QL80_.jpg&imgrefurl=https%3A%2F%2Fwww.amazon.ca%2FMockingjay-Final-Book-Hunger-Games%2Fdp%2F0545663261&docid=BxG7QiWYCHGQuM&tbnid=7SNUdjKbJGWuqM&vet=12ahUKEwi7nt2qyqSFAxWn5ckDHWGlCYIQM3oECBYQAA..i&w=660&h=1000&hcb=2&ved=2ahUKEwi7nt2qyqSFAxWn5ckDHWGlCYIQM3oECBYQAA",
-        "description": "It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute."
+        "title": "It's Not Easy Being a Bunny",
+        "author": "Marilyn Sadler",
+        "rating": 4.8,
+        "image": "https://m.media-amazon.com/images/I/71ihGxMQEBL._SY522_.jpg",
+        "description": "P.J. Funnybunny doesn't want to be a bunny anymore! In this hilarious Beginner Book, a young bunny explores life with different animal friends. And don’t miss the charming follow-up, It’s Better Being a Bunny, available now! This is a perfect gift for Easter or celebrating bunnies all year round."
+    },
+    {
+        "title": "The Quest - The Snow Labyrinth Book 7: A Place of Legend",
+        "author": "Mark Mulle",
+        "rating": 4.7,
+        "image": "https://m.media-amazon.com/images/I/71vvgh8WkuL._SY522_.jpg",
+        "description": "Steve is hoping for a quiet life in Minecraft. After saving Herobrine and the game he loves from the Scarlet Hero, he wants nothing more than to enjoy the game."
+    },
+    {
+        "title": "HAUNTED: The Cursed Lake",
+        "author": "Mahtab Narsimhan",
+        "rating": 4.8,
+        "image": "https://m.media-amazon.com/images/I/71cB8g3g53L._SY522_.jpg",
+        "description": "12-year-old Jonah and his mother have just reopened Camp Sunny Acres after a horrific tragedy drove the last owners away. They’re desperate to make it a success, but new camper, Dexter, won’t stop breaking the rules. To make matters worse, Jonah suspects that the mysterious disturbance in the lake might be a restless ghost."
+    },
+    {
+        "title": "Divergent",
+        "author": "Veronica Roth",
+        "rating": 4.5,
+        "image": "https://m.media-amazon.com/images/I/81H1MhBbPbL._SY522_.jpg",
+        "description": "One choice can transform you. Beatrice Prior's society is divided into five factions—Candor (the honest), Abnegation (the selfless), Dauntless (the brave), Amity (the peaceful), and Erudite (the intelligent). Beatrice must choose between staying with her Abnegation family and transferring factions. Her choice will shock her community and herself. But the newly christened Tris also has a secret, one she's determined to keep hidden, because in this world, what makes you different makes you dangerous."
     }]
 }
 

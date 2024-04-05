@@ -76,8 +76,10 @@ h1{
       margin-right: 15px;
       border-style: none;
       width: 166px;
-      height: 243px;
-      border-style: solid;
+      min-height: 243px;
+      border-style: none;
+      justify-content: center;
+      align-items: center;
     }
 
     img {
@@ -107,23 +109,28 @@ h1{
   .cardi {
    
     width: 166px;
-    
-    margin-bottom: 7px;
+    height: 243px;
+    margin-bottom: 12px;
    
   }
 
   .bookR {
     display: inline-block;
-    margin: 50px;
+    margin: 40px;
     width: 166px;
     justify-content: center;
     align-items: center;
+
     
   }
 
+
+  
+
+
   .stars {
-    margin-left: 35px;
-    
+    margin-left: 0px;
+    padding-top: 10px;
   }
   
   
@@ -202,4 +209,15 @@ h1{
  .dropdown button .dropdown-item.active:focus {
     color: #663A21 !important; 
     background-color: #f8f9fa !important; 
+}
+
+button{
+    background-color: #FFF9F0;
+    border-color: #663A21;
+    color:#663A21;
+    box-shadow: 0px 0px 2px 2px #663A21;
+}
+
+.add{
+    transform: scale(2.5)
 }

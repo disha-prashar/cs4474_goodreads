@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import './MyBooks.css';
-import { Rating } from "@mui/material";
+import { Rating, Button } from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
 
 function FetchData({data, s}){
     
@@ -12,6 +13,7 @@ function FetchData({data, s}){
 
     return(
         <Container fluid>
+        
             {data.map((b) => {
                 return (
                     <div className="bookR" key={b.title}>
@@ -21,6 +23,15 @@ function FetchData({data, s}){
                     
                 );
             })}
+        
+            <button className="bookR"  style={{verticalAlign:"top", height: 260, borderStyle:"none"}}>
+                <AddIcon className="add"/>
+                <h3 style={{marginTop: 20}}>Add Books</h3>
+            </button>
+       
+        
+        
+            
         </Container> 
     )
 }

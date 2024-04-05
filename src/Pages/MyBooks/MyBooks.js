@@ -13,6 +13,7 @@ import FetchData from './FetchData';
 import book_data from './bookData';
 import { Rating } from "@mui/material";
 import { OverlayTrigger, Popover} from 'react-bootstrap';
+import AddIcon from '@mui/icons-material/Add';
 
 
 
@@ -76,6 +77,10 @@ function MyBooks() {
                                         
                                     );
                                 })}
+                                <button className="card"  style={{verticalAlign:"top", height: 260}}>
+                                    <AddIcon className="add"/>
+                                    <h3 style={{marginTop: 20}}>Add Books</h3>
+                                </button>
                             </div>
                         </div>
                         <div className='bookshelf'>
@@ -85,7 +90,7 @@ function MyBooks() {
                                         <h2>Want To Read</h2>
                                     </Col>
                                     <Col  className = 'deck-head'>
-                                        <Link to='./ReadingView' className='link-style'>View All</Link>
+                                        <Link to='/WantToReadView' className='link-style'>View All</Link>
                                     </Col>
                                 </Row>
                             </Container>

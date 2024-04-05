@@ -13,9 +13,9 @@ import { render } from 'react-dom';
 
 
 
-function ReadingView(){
+function WantToReadView(){
     const [sorts, setSort] = useState(1)
-    const [books, setBooks] = useState(book_data.reading_books)
+    const [books, setBooks] = useState(book_data.want_to_read)
     const sortedItems = books
     
     const handleSelect=(e)=>{
@@ -50,7 +50,7 @@ function ReadingView(){
                 <Container fluid>
                     <Row>
                         <Col>
-                            <h1>My Books/Reading</h1>
+                            <h1>My Books/Want To Read</h1>
                         </Col>
                         <Col xs ={1}>
                             <DropdownButton title = "Sort" onSelect={handleSelect}>
@@ -74,7 +74,7 @@ function ReadingView(){
                     </Col>
                     <Col xs = {9}>
                         <FetchData data = {books} s = {sorts}/>
-                        
+                    
                     </Col>
                 </Row>
 
@@ -85,4 +85,4 @@ function ReadingView(){
 
     )
 }
-export default ReadingView;
+export default WantToReadView;
