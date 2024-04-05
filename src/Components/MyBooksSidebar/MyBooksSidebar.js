@@ -14,7 +14,7 @@ function MyBooksSidebar() {
         <Nav className="flex-column">
             <NavDropdown title = "Bookshelves" id = "dropdown-button" onToggle={() => setIsExpanded(!isExpanded)}>
                 <NavDropdown.Item as={Link} to="/ReadingView" eventKey="1.1">Reading</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/Pages/MyBooks/WantToReadView" eventKey="1.2">Want to Read</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/WantToReadView" eventKey="1.2">Want to Read</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/Pages/MyBooks/ReadView" eventKey="1.3">Read</NavDropdown.Item>
             </NavDropdown>
             <div className={isExpanded ? 'dropdown-expanded' : ''}>
