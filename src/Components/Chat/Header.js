@@ -16,8 +16,8 @@ import { CaretDown, MagnifyingGlass, Phone, VideoCamera } from "phosphor-react";
 import { faker } from "@faker-js/faker";
 import { useSearchParams } from "react-router-dom";
 import useResponsive from "../Hooks/useResponsive";
-import phoneIcon from '../../Components/Chat/phone.png';
-import videoIcon from '../../Components/Chat/video.png';
+import phoneIcon from '../../Components/Chat/Images/phone.png';
+import videoIcon from '../../Components/Chat/Images/video.png';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -91,9 +91,7 @@ const ChatHeader = () => {
         direction="row"
         alignItems={"center"}
       >
-        <IconButton sx={{ fontSize: 50 }}>
-          <img src={phoneIcon} style={{height: 50, width: 50}}></img>
-        </IconButton>
+        <img src={phoneIcon} style={{height: 50, width: 50}}></img>
 
         {/*  Avatar picture on top of name */}
         <Box>
@@ -113,10 +111,7 @@ const ChatHeader = () => {
             </Typography>
           </Stack>
         </Box>
-
-        <IconButton sx={{ fontSize: 50 }}>
-          <img src={videoIcon} style={{height: 50, width: 50}}></img>
-        </IconButton>
+        <img src={videoIcon} style={{height: 50, width: 50}}></img>
       </Stack>
       <IconButton
         id="conversation-positioned-button"
@@ -125,7 +120,8 @@ const ChatHeader = () => {
         }
         aria-haspopup="true"
         aria-expanded={openConversationMenu ? "true" : undefined}
-        onClick={handleClickConversationMenu}>
+        onClick={handleClickConversationMenu}
+        style={{outline:'none'}}>
           <CaretDown color={'#663A21'}/>
         </IconButton>
           <Menu
