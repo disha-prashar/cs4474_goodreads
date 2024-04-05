@@ -73,6 +73,22 @@
         "rating": 4.5,
         "image": "https://m.media-amazon.com/images/I/81H1MhBbPbL._SY522_.jpg",
         "description": "One choice can transform you. Beatrice Prior's society is divided into five factions—Candor (the honest), Abnegation..."
+    }],
+
+    "read_books":
+    [{
+        "title": "The Hunger Games: Catching Fire",
+        "author": "Suzanne Collins",
+        "rating": 4.33,
+        "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586722941l/6148028.jpg",
+        "description":  "Against all odds, Katniss Everdeen has won the Hunger Games. She and fellow District 12 tribute..."
+    },
+    {
+        "title": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "rating": 4.34,
+        "image": "https://m.media-amazon.com/images/I/71WSzS6zvCL._AC_UF1000,1000_QL80_.jpg",
+        "description": "In the ruins of a place once known as North America lies the nation of Panem, a shining Capitol..."
     }]
 }
 

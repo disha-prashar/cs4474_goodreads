@@ -125,11 +125,21 @@ function MyBooks() {
                                     </Col>
                                 </Row>
                             </Container>
-                            <div class="scrolling-wrapper">
-                                <div class="card"><img src = {HG2} alt = "Hunger Games 1"/></div>
-                                <div class="card"><img src = {HG1} alt = "Hunger Games 2"/></div>
-
-                                <div class="card"><h2>Card</h2></div>
+                            <div className="scrolling-wrapper">
+                                {book_data.read_books.map((book) => ( // Assuming `read_books` is the array name
+                                    <OverlayTrigger
+                                        key={book.title}
+                                        trigger={['hover', 'focus']}
+                                        placement="top"
+                                        delay={{ show: 100, hide: 400 }}
+                                        overlay={generatePopover(book)}
+                                    >
+                                        <div className="card">
+                                            <img src={book.image} alt="book cover" />
+                                            <Rating className="stars" value={book.rating} precision={0.05} size="small" readOnly />
+                                        </div>
+                                    </OverlayTrigger>
+                                ))}
                             </div>
                         </div>
                     </Col>
