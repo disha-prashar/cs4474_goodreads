@@ -37,7 +37,7 @@ function FetchData({data, s}){
                     <OverlayTrigger
                         key={book.title}
                         trigger="hover"
-                        placement="top"
+                        placement="left"
                         overlay={generatePopover(book)}>
                         <div className="bookR">
                             <img className="cardi" src={book.image} alt="book cover" />
