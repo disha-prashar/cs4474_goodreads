@@ -79,8 +79,7 @@ function MyBooks() {
                                             <Rating className="stars" value={book.rating} precision={0.05} size="small" readOnly />
                                         </div>
                                      </OverlayTrigger>   
-                                    );
-                                })}
+                                     ))}
                                 <button className="card"  style={{verticalAlign:"top", height: 260}}>
                                     <AddIcon className="add"/>
                                     <h3 style={{marginTop: 20}}>Add Books</h3>
@@ -112,9 +111,7 @@ function MyBooks() {
                                             <Rating className="stars" value={book.rating} precision={0.05} size="small" readOnly />
                                         </div>
                                     </OverlayTrigger>
-                                        
-                                    );
-                                })}
+                                     ))}
                             </div>
                         </div>
                         <div className='bookshelf'>
