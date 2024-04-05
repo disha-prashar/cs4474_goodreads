@@ -1,0 +1,28 @@
+/* MyBooksSidebar.css */
+
+/* Targets all text within the Nav component */
+.nav.flex-column,
+.nav.flex-column .nav-link,
+.nav.flex-column .dropdown-item,
+.nav.flex-column .dropdown-toggle {
+    color: #663A21 !important; /* Ensures this color override applies */
+}
+
+.nav.flex-column .dropdown-item:hover,
+.nav.flex-column .dropdown-item:focus,
+.nav.flex-column .dropdown-item:active {
+    background-color: #f8f9fa !important; 
+    color: #663A21 !important;
+}
+
+.nav.flex-column .dropdown-item.active,
+.nav.flex-column .dropdown-item.active:hover,
+.nav.flex-column .dropdown-item.active:focus {
+    color: #663A21 !important; 
+    background-color: #f8f9fa !important; 
+}
+
+/* Additional CSS for when dropdown is expanded */
+.dropdown-expanded {
+    margin-top: var(--expanded-dropdown-margin, 10em); 
+}

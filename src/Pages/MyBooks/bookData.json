@@ -1,0 +1,78 @@
+
+{
+    "reading_books":
+    [{
+        "title": "The Hunger Games: Mockingjay",
+        "author": "Suzanne Collins",
+        "rating": 4.45,
+        "image": "https://m.media-amazon.com/images/I/61n5pTMvmpL._AC_UF1000,1000_QL80_.jpg",
+        "description": "It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute."
+    },
+    {
+        "title": "The Seven Husbands of Evelyn Hugo: A Novel",
+        "author": "Taylor Jenkins Reid",
+        "rating": 4,
+        "image": "https://m.media-amazon.com/images/I/71KcUgYanhL._AC_UY218_.jpg",
+        "description": "Aging and reclusive Hollywood movie icon Evelyn Hugo is finally ready to tell the truth about her glamorous and scandalous life. But when she chooses unknown magazine reporter Monique Grant for the job, no one is more astounded than Monique herself. Why her? Why now?"
+    },
+    {
+        "title": "The Housemaid",
+        "author": "Freida McFadden",
+        "rating": 5,
+        "image": "https://m.media-amazon.com/images/I/81AHTyq2wVL._SY466_.jpg",
+        "description": "Every day I clean the Winchesters’ beautiful house top to bottom. I collect their daughter from school. And I cook a delicious meal for the whole family before heading up to eat alone in my tiny room on the top floor."
+    }],
+
+    "want_to_read":
+    [
+    {
+        "title": "The Ballad of Songbirds and Snakes (A Hunger Games Novel)",
+        "author": "Suzanne Collins",
+        "rating": 4.5,
+        "image": "https://m.media-amazon.com/images/I/81EGcrHKG-L._SY522_.jpg",
+        "description": "It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute."
+    },
+    {
+        "title": "The Housemaid's Secret",
+        "author": "Freida McFadden",
+        "rating": 4.4,
+        "image": "https://m.media-amazon.com/images/I/81LZXcfKqJL._SY466_.jpg",
+        "description": "It's hard to find an employer who doesn't ask too many questions about my past. So I thank my lucky stars that the Garricks miraculously give me a job, cleaning their stunning penthouse with views across the city and preparing fancy meals in their shiny kitchen. I can work here for a while, stay quiet until I get what I want. It's almost perfect. But I still haven't met Mrs Garrick, or seen inside the guest bedroom. I'm sure I hear her crying. I notice spots of blood around the neck of her white nightgowns when I'm doing laundry. And one day I can't help but knock on the door. When it gently swings open, what I see inside changes everything...."
+    },
+    {
+        "title": "The Housemaid Is Watching",
+        "author": " Freida McFadden",
+        "rating": 3,
+        "image": "https://m.media-amazon.com/images/I/91OSM58Y-pL._SY466_.jpg",
+        "description": "You must be our new neighbors Mrs. Lowell gushes and waves across the picket fence. I clutch my daughter's hand and smile back: but the second Mrs. Lowell sees my husband a strange expression crosses her face. In that moment I make a promise. We finally have a family home. My past is far, far behind us. And I'll do anything to keep it that way…"
+    },
+    {
+        "title": "It's Not Easy Being a Bunny",
+        "author": "Marilyn Sadler",
+        "rating": 4.8,
+        "image": "https://m.media-amazon.com/images/I/71ihGxMQEBL._SY522_.jpg",
+        "description": "P.J. Funnybunny doesn't want to be a bunny anymore! In this hilarious Beginner Book, a young bunny explores life with different animal friends. And don’t miss the charming follow-up, It’s Better Being a Bunny, available now! This is a perfect gift for Easter or celebrating bunnies all year round."
+    },
+    {
+        "title": "The Quest - The Snow Labyrinth Book 7: A Place of Legend",
+        "author": "Mark Mulle",
+        "rating": 4.7,
+        "image": "https://m.media-amazon.com/images/I/71vvgh8WkuL._SY522_.jpg",
+        "description": "Steve is hoping for a quiet life in Minecraft. After saving Herobrine and the game he loves from the Scarlet Hero, he wants nothing more than to enjoy the game."
+    },
+    {
+        "title": "HAUNTED: The Cursed Lake",
+        "author": "Mahtab Narsimhan",
+        "rating": 4.8,
+        "image": "https://m.media-amazon.com/images/I/71cB8g3g53L._SY522_.jpg",
+        "description": "12-year-old Jonah and his mother have just reopened Camp Sunny Acres after a horrific tragedy drove the last owners away. They’re desperate to make it a success, but new camper, Dexter, won’t stop breaking the rules. To make matters worse, Jonah suspects that the mysterious disturbance in the lake might be a restless ghost."
+    },
+    {
+        "title": "Divergent",
+        "author": "Veronica Roth",
+        "rating": 4.5,
+        "image": "https://m.media-amazon.com/images/I/81H1MhBbPbL._SY522_.jpg",
+        "description": "One choice can transform you. Beatrice Prior's society is divided into five factions—Candor (the honest), Abnegation (the selfless), Dauntless (the brave), Amity (the peaceful), and Erudite (the intelligent). Beatrice must choose between staying with her Abnegation family and transferring factions. Her choice will shock her community and herself. But the newly christened Tris also has a secret, one she's determined to keep hidden, because in this world, what makes you different makes you dangerous."
+    }]
+}
+

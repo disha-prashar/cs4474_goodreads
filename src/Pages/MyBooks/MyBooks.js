@@ -8,22 +8,40 @@ import HG1 from './BookImages/hunger_games_1.jpg';
 import HG2 from './BookImages/hunger_games_2.jpg';
 import HG3 from './BookImages/hunger_games_3.jpg';
 import HG4 from './BookImages/hunger_games_4.jpg';
+import { Link, useResolvedPath, resolvedPath, useMatch } from 'react-router-dom';
+import FetchData from './FetchData';
+import book_data from './bookData';
+import { Rating } from "@mui/material";
+import { OverlayTrigger, Popover} from 'react-bootstrap';
+import AddIcon from '@mui/icons-material/Add';
 
-const reading_books = [
-    ["The Hunger Games: Mockingjay", "Suzanne Collins", 3.95, "HG3","It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute." ]
-]
-const want_books = [
-    ["The Ballad of Songbirds and Snakes","Suzanne Collins", 3.95, "HG4","It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute."],
-]
 
-const read_books = [
-    ["The Hunger Games: Catching Fire" ,"Suzanne Collins", 3.95, "HG2","It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute."],
-    ["The Hunger Games" ,"Suzanne Collins", 3.95, "HG1","It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute."]
-]
+
+const hungerGames2Popover = (
+    <Popover id="popover-hunger-games" className="book-details-popover">
+      <Popover.Body>
+        <div className="popover-content">
+          <h3 className="popover-title">Catching Fire</h3>
+          <p className="popover-author">Suzanne Collins</p>
+          <div className="popover-rating">
+            <span className="stars">★ 3.95</span>
+          </div>
+          <p className="popover-summary">
+            In the ruins of a place once known as North America lies the nation of Panem...
+          </p>
+          <div className="popover-actions">
+            <button className="btn-more-info">More Information</button>
+          </div>
+        </div>
+      </Popover.Body>
+    </Popover>
+  );
 
 let temp = "";
 
 function MyBooks() {
+    const data = book_data;
+    
     return (
         <div> 
             <div style={{paddingTop:50, paddingLeft:50, paddingRight:50}}>
@@ -32,36 +50,79 @@ function MyBooks() {
             </div>
             <Container fluid>
                 <Row>
-                    <Col xs = {3}>
+                    <Col xs = {3} style={{ paddingLeft: '50px' }}>
                         <div>
                             <MyBooksSidebar />
                         </div>
                     </Col>
                     <Col xs = {9}>
                         <div className='bookshelf'>
-                            <h2>Reading</h2>
+                            <Container fluid style = {{paddingTop: 10}}>
+                                <Row >
+                                    <Col xs = {10}>
+                                        <h2>Reading</h2>
+                                    </Col>
+                                    <Col  className = 'deck-head'>
+                                        <Link to='/ReadingView' className='link-style'>View All</Link>
+                                    </Col>
+                                </Row>
+                            </Container>
                             <div class="scrolling-wrapper">
-                                <div class="card-1"><img src = {HG3} alt = "Hunger Games 3"/></div>
-                                <div class="card"><h2>Card</h2></div>
-                                <div class="card"><h2>Card</h2></div>
-                                <div class="card"><h2>Card</h2></div>
+                                {data.reading_books.map((b) => {
+                                    return (
+                                        <div className="card">
+                                            <img src={b.image} alt ="book"/> 
+                                            <Rating className ="stars" value={b.rating} precision={0.05} size = "small"readOnly/>
+                                        </div>
+                                        
+                                    );
+                                })}
+                                <button className="card"  style={{verticalAlign:"top", height: 260}}>
+                                    <AddIcon className="add"/>
+                                    <h3 style={{marginTop: 20}}>Add Books</h3>
+                                </button>
                             </div>
                         </div>
                         <div className='bookshelf'>
-                            <h2>Want To Read</h2>
+                            <Container fluid style = {{paddingTop: 10}}>
+                                <Row >
+                                    <Col xs = {10}>
+                                        <h2>Want To Read</h2>
+                                    </Col>
+                                    <Col  className = 'deck-head'>
+                                        <Link to='/WantToReadView' className='link-style'>View All</Link>
+                                    </Col>
+                                </Row>
+                            </Container>
                             <div class="scrolling-wrapper">
-                                <div class="card"><img src = {HG4} alt = "Hunger Games BOSAS"/></div>
-                                <div class="card"><h2>Card</h2></div>
-                                <div class="card"><h2>Card</h2></div>
-                                <div class="card"><h2>Card</h2></div>
+                                {data.want_to_read.map((b) => {
+                                    return (
+                                        <div className="card">
+                                            <img src={b.image} alt ="book"/> 
+                                            <Rating className ="stars" value={b.rating} precision={0.05} size = "small"readOnly/>
+                                        </div>
+                                        
+                                    );
+                                })}
                             </div>
                         </div>
                         <div className='bookshelf'>
-                            <h2>Read</h2>
+                            <Container fluid style = {{paddingTop: 10}}>
+                                <Row >
+                                    <Col xs = {10}>
+                                        <h2>Read</h2>
+                                    </Col>
+                                    <Col  className = 'deck-head'>
+                                        <Link to='/ReadingView' className='link-style'>View All</Link>
+                                    </Col>
+                                </Row>
+                            </Container>
                             <div class="scrolling-wrapper">
-                                <div class="card"><img src = {HG2} alt = "Hunger Games 1"/></div>
+                                <OverlayTrigger trigger="hover" placement="top" overlay={hungerGames2Popover}> 
+                                    <div class="card"><img src = {HG2} alt = "Hunger Games 1"/></div>
+                                </OverlayTrigger>
                                 <div class="card"><img src = {HG1} alt = "Hunger Games 2"/></div>
-                                
+
                                 <div class="card"><h2>Card</h2></div>
                             </div>
                         </div>
