@@ -77,9 +77,9 @@ function MyBooks() {
                                         
                                     );
                                 })}
-                                <button className="card"  style={{verticalAlign:"top", height: 260}}>
+                                <button className="card"  style={{verticalAlign:"top", height: 240, marginBottom:"30px"}}>
                                     <AddIcon className="add"/>
-                                    <h3 style={{marginTop: 20}}>Add Books</h3>
+                                    <h2 style={{marginTop: 20}}>Add Books</h2>
                                 </button>
                             </div>
                         </div>
@@ -104,6 +104,10 @@ function MyBooks() {
                                         
                                     );
                                 })}
+                                <button className="card"  style={{verticalAlign:"top", height: 240, marginBottom:"30px"}}>
+                                    <AddIcon className="add"/>
+                                    <h2 style={{marginTop: 20}}>Add Books</h2>
+                                </button>
                             </div>
                         </div>
                         <div className='bookshelf'>
