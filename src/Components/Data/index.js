@@ -8,6 +8,12 @@ import {
   User,
   Users,
 } from "phosphor-react";
+import audrey from '../../Components/Chat/Images/audrey.jpeg';
+import author1 from '../../Components/Chat/Images/colleen_hoover.jpeg';
+import julie from '../../Components/Chat/Images/julie.jpeg';
+import author2 from '../../Components/Chat/Images/rick_riordan.jpeg';
+import author3  from '../../Components/Chat/Images/sarah_jmaas.jpeg';
+
 
 const Profile_Menu = [
   {
@@ -84,36 +90,41 @@ const CallLogs = [
   }
 ];
 
-const MembersList = [
+const AuthorUpdatesList = [
   {
     id:0,
-    img: faker.image.avatar(),
-    name: faker.name.firstName(),
+    img: author1,
+    name: "Colleen Hoover",
     online: true
   },
   {
     id:1,
-    img: faker.image.avatar(),
-    name: faker.name.firstName(),
+    img: author2,
+    name: "Rick Riordan",
     online: false
   },
   {
     id:2,
-    img: faker.image.avatar(),
-    name: faker.name.firstName(),
+    img: author3,
+    name: "Sara J Maas",
     online: true
-  },
+  }
+];
+
+const MembersList = [
   {
     id:3,
-    img: faker.image.avatar(),
-    name: faker.name.firstName(),
-    online: false
+    img: audrey,
+    name: "Audrey Miller",
+    online: true,
+    msg: "Hi, did you finish that page yet?"
   },
   {
     id:4,
-    img: faker.image.avatar(),
-    name: faker.name.firstName(),
-    online: true
+    img: julie,
+    name: "Julia Simss",
+    online: true,
+    msg: "Can you call me later? I..."
   }
 ];
 
@@ -359,6 +370,7 @@ const SHARED_DOCS = [
 ]
 
 export {
+  AuthorUpdatesList,
   Profile_Menu,
   Nav_Setting,
   Nav_Buttons,
