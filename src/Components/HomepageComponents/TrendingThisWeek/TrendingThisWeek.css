@@ -1,27 +1,32 @@
 /* TrendingThisWeek.css */
 
+.trendingBooksContainer {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  flex-wrap: wrap; /* Allows for wrapping */
+  width: 100%; /* Full width of its parent */
+  padding: 0; /* Reset any padding */
+  margin: 0; /* Reset any margin */
+  box-sizing: border-box;
+}
+
 .trendingSection {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns children to the start of the cross-axis */
   box-sizing: border-box;
-  padding: 20px; /* Adjust padding to match layout, if necessary */
-  margin-top: 50px; /* Consistent spacing with the ReadingChallengeSection */
+  padding: 20px;
+  width: 100%; /* Full width */
+  margin-top: 50px;
 }
 
 .trendingTitle {
   font-family: "DM Sans", sans-serif;
-  font-size: 42px; /* Large title to match the ReadingChallengeSection */
+  font-size: 42px;
   font-weight: bold;
-  color: #663A21; /* Consistent color scheme */
-  margin-left: 200px; /* Aligning with the text in the ReadingChallengeSection */
-  margin-bottom: 20px; /* Space before the book list starts */
-}
-
-.trendingBooksContainer {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px; /* Adjust as needed */
-  margin-right: 100px; /* Consistent with the ReadingChallengeSection */
+  color: #663A21;
+  margin-left: 200px; /* Keep the title aligned as it is */
+  margin-bottom: 20px; /* Space before the banner */
 }
 
 .book {
@@ -47,7 +52,49 @@
   margin: 8px; /* Adjust as needed */
 }
 
+.trendingTitle {
+  font-family: "DM Sans", sans-serif;
+  font-size: 42px; /* Large title to match the ReadingChallengeSection */
+  font-weight: bold;
+  color: #663A21; /* Consistent color scheme */
+  margin-left: 200px; /* Aligning with the text in the ReadingChallengeSection */
+  margin-bottom: 20px; /* Space before the book list starts */
+}
+
+.book {
+  width: 180px; /* Adjust width as needed */
+  flex: none; /* Prevent flexbox from shrinking the item */
+  border-radius: 8px; /* Consistent with button styling */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  background-color: #FFF9F0; /* Background color consistent with buttons */
+  align-items: center; /* Center children horizontally */
+  justify-content: center;
+}
+
+.bookCover {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bookTitle {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px; /* Adjust to match layout */
+  font-weight: bold;
+  color: #663A21; /* Consistent color scheme */
+  margin: 8px; /* Adjust as needed */
+}
+
 .bookAuthor {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px; /* Adjust to match layout */
+  color: #663A21; /* Consistent color scheme */
+  margin: 0 8px 8px; /* Adjust as needed */
+}
+
+{
+
   font-family: "DM Sans", sans-serif;
   font-size: 16px; /* Adjust to match layout */
   color: #663A21; /* Consistent color scheme */

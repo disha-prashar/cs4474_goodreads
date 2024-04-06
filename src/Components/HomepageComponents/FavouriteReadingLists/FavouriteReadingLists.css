@@ -1,64 +1,108 @@
-/* FavoriteReadingLists.css */
-
 .favouriteReadingListsSection {
-  padding: 20px; /* Adjust padding to match other sections */
-  background-color: #fff; /* Assuming a white background, adjust as needed */
-  font-family: 'DM Sans', sans-serif; /* Consistent with other text */
-  color: #663A21; /* Brownish text color as seen in other sections */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #FFF9F0;
+  font-family: 'DM Sans', sans-serif;
+  color: #663A21;
 }
 
 .favouriteReadingListsTitle {
-  font-size: 42px; /* Large, consistent title size */
+  font-size: 42px;
   font-weight: bold;
-  color: #663A21; /* Title color */
-  margin: 50px 200px; /* Top margin and horizontal padding */
+  color: #663A21;
+  margin: 0 auto; /* Center title */
+  padding: 20px 0; /* Add some padding at the top and bottom */
 }
 
 .readingListsContainer {
   display: flex;
-  gap: 20px; /* Spacing between cards */
-  overflow-x: auto; /* For horizontal scrolling */
-  margin-bottom: 50px; /* Space at the bottom of the section */
+  justify-content: flex-start; /* Align items to the start on larger screens */
+  align-items: center; /* Center items vertically */
+  gap: 20px;
+  overflow-x: auto;
+  margin: 20px 0;
 }
 
 .readingListCard {
-  flex: none; /* Cards don't grow or shrink */
-  background-color: #FFF9F0; /* Off-white card background */
-  border: 1px solid #ddd; /* Light border for the cards */
-  border-radius: 8px; /* Rounded corners */
-  width: 240px; /* Width of the card, adjust as needed */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Consistent shadow for depth */
+  flex: 1; /* Cards can grow to use available space */
+  background-color: #FFF9F0;
+  border: none;
+  border-radius: 8px;
+  width: 240px; /* This sets a base width */
+  max-width: 100%; /* But they can grow up to 100% of their container */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 0 10px;
 }
 
 .readingListImage {
-  width: 100%; /* Full width of the card */
-  border-top-left-radius: 8px; /* Rounded corners at the top of the image */
-  border-top-right-radius: 8px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
+.readingListDetails {
+  flex: 2; /* This block can grow twice as much as the images */
+  padding: 20px; /* Add some padding */
+  max-width: 400px; /* Limit the width of the text block */
+}
+
+
 .readingListTitle {
-  font-size: 20px; /* Title size within card */
-  margin: 16px; /* Margin around text */
+  font-size: 20px;
+  margin: 16px;
 }
 
 .readingListDescription {
-  font-size: 16px; /* Description text size */
-  margin: 0 16px 16px; /* Margin around text */
+  font-size: 16px;
+  margin: 0 16px 16px;
 }
 
 .moreButton {
-  font-size: 20px; /* Consistent button text size */
-  padding: 10px 20px; /* Padding inside the button */
-  background-color: #663A21; /* Button color */
-  color: #FFF9F0; /* Button text color */
-  border: none; /* No border */
-  border-radius: 4px; /* Slight rounding of corners */
-  cursor: pointer; /* Hand cursor on hover */
-  margin-left: 200px; /* Align the button with the title */
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #663A21;
+  color: #FFF9F0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block; /* Ensure button is a block-level element */
+  margin: 20px auto; /* Center the button horizontally */
+  width: fit-content; /* The width should fit its content */
 }
 
-/* Add hover effects for interactive elements */
 .moreButton:hover {
-  background-color: #8c6d4d; /* Darker shade on hover */
+  background-color: #8c6d4d;
 }
 
+/* Responsive design adjustments */
+@media (max-width: 767px) {
+  .favouriteReadingListsTitle {
+    font-size: 32px; /* Smaller font size for smaller screens */
+    margin: 20px; /* Less margin on smaller screens */
+  }
+
+  .readingListCard {
+    margin: 0 5px; /* Less space between cards on smaller screens */
+  }
+
+  .readingListImage {
+    max-width: 150px; /* Smaller images on smaller screens */
+  }
+
+  .moreButton {
+    margin: 20px; /* Adjust button margin on smaller screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .readingListCard {
+    width: 240px; /* Fixed width on larger screens */
+  }
+
+  .readingListImage {
+    max-width: 240px; /* Fixed max-width for images */
+  }
+}
