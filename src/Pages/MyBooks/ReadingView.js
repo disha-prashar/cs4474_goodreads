@@ -10,7 +10,7 @@ import FetchData from './FetchData';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { DropdownButton } from 'react-bootstrap';
 import { render } from 'react-dom';
-
+import {Link} from 'react-router-dom';
 
 
 function ReadingView(){
@@ -50,7 +50,7 @@ function ReadingView(){
                 <Container fluid>
                     <Row>
                         <Col>
-                            <h1>My Books/Reading</h1>
+                        <Link to='/MyBooks' style = {{textDecoration:"none"}}><h1>My Books/Reading</h1></Link>
                         </Col>
                         <Col xs ={1}>
                             <DropdownButton title = "Sort" onSelect={handleSelect}>

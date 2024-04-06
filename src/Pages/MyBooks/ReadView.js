@@ -13,9 +13,9 @@ import { render } from 'react-dom';
 import {Link} from 'react-router-dom';
 
 
-function WantToReadView(){
+function ReadView(){
     const [sorts, setSort] = useState(1)
-    const [books, setBooks] = useState(book_data.want_to_read)
+    const [books, setBooks] = useState(book_data.read_books)
     const sortedItems = books
     
     const handleSelect=(e)=>{
@@ -33,8 +33,6 @@ function WantToReadView(){
             break
             case "4":
             sortedItems.sort((a,b) => a.author.toLowerCase() > b.author.toLowerCase() ? 1 : -1)
-            case "5":
-            sortedItems.sort((a,b) => a.rating < b.rating ? 1 : -1)
             default:
             console.log("not an option")
             }
@@ -52,7 +50,7 @@ function WantToReadView(){
                 <Container fluid>
                     <Row>
                         <Col>
-                            <Link to='/MyBooks' style = {{textDecoration:"none"}}><h1>My Books/Want To Read</h1></Link>
+                        <Link to='/MyBooks' style = {{textDecoration:"none"}}><h1>My Books/Read</h1></Link>
                         </Col>
                         <Col xs ={1}>
                             <DropdownButton title = "Sort" onSelect={handleSelect}>
@@ -76,7 +74,7 @@ function WantToReadView(){
                     </Col>
                     <Col xs = {9}>
                         <FetchData data = {books} s = {sorts}/>
-                    
+                        
                     </Col>
                 </Row>
 
@@ -87,4 +85,4 @@ function WantToReadView(){
 
     )
 }
-export default WantToReadView;
+export default ReadView;
