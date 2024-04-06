@@ -1,24 +1,29 @@
-import React from 'react';
+import React, { useState } from "react";
 import './MyBooks.css';
 import MyBooksSidebar from '../../Components/MyBooksSidebar/MyBooksSidebar'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import HG1 from './BookImages/hunger_games_1.jpg';
-import HG2 from './BookImages/hunger_games_2.jpg';
-import HG3 from './BookImages/hunger_games_3.jpg';
-import HG4 from './BookImages/hunger_games_4.jpg';
 import { Link, useResolvedPath, resolvedPath, useMatch } from 'react-router-dom';
 import FetchData from './FetchData';
 import book_data from './bookData';
 import { Rating } from "@mui/material";
 import { OverlayTrigger, Popover} from 'react-bootstrap';
 import AddIcon from '@mui/icons-material/Add';
+import { Button, Card, Form } from "react-bootstrap";
 
 let temp = "";
 
 function MyBooks() {
     const data = book_data;
+    const [popupVisible, setPopupVisible] = useState(false);
+    
+    function showPopup(){
+        setPopupVisible(true)
+    }
+    function closePopup(){
+        setPopupVisible(false)
+    }
 
     const generatePopover = (book) => (
         <Popover id={`popover-${book.title.replace(/\s/g, '-').toLowerCase()}`}>
@@ -80,7 +85,7 @@ function MyBooks() {
                                         </div>
                                      </OverlayTrigger>   
                                      ))}
-                                <button className="card"  style={{verticalAlign:"top", height: 260}}>
+                                <button className="card"  onClick = {showPopup} style={{verticalAlign:"top", height: 235, marginBottom: 30}}>
                                     <AddIcon className="add"/>
                                     <h2 style={{marginTop: 20}}>Add Books</h2>
                                 </button>
@@ -112,6 +117,10 @@ function MyBooks() {
                                         </div>
                                     </OverlayTrigger>
                                      ))}
+                                <button className="card"  onClick = {showPopup} style={{verticalAlign:"top", height: 235, marginBottom: 30}}>
+                                    <AddIcon className="add"/>
+                                    <h2 style={{marginTop: 20}}>Add Books</h2>
+                                </button>
                             </div>
                         </div>
                         <div className='bookshelf'>
@@ -121,7 +130,7 @@ function MyBooks() {
                                         <h2>Read</h2>
                                     </Col>
                                     <Col  className = 'deck-head'>
-                                        <Link to='/ReadingView' className='link-style'>View All</Link>
+                                        <Link to='/ReadView' className='link-style'>View All</Link>
                                     </Col>
                                 </Row>
                             </Container>
@@ -140,10 +149,28 @@ function MyBooks() {
                                         </div>
                                     </OverlayTrigger>
                                 ))}
+                                <button className="card"  onClick = {showPopup} style={{verticalAlign:"top", height: 235, marginBottom: 30}}>
+                                    <AddIcon className="add"/>
+                                    <h2 style={{marginTop: 20}}>Add Books</h2>
+                                </button>
                             </div>
                         </div>
                     </Col>
                 </Row>
+            
+            {popupVisible && (
+                <Card className="text-center" style = {{width: '40rem', height: "20rem", borderStyle: "solid", padding: 20, borderWidth: 5, borderColor: "#663A21", position:"fixed", top:"50%", left:"40%", alignItems:"center", backgroundColor: "#FFF9F0"}}>
+                    <Card.Header className = "popupheader" style={{width: "100%", fontSize:10}}><h3>Add Book</h3></Card.Header>
+                    <Form>
+                        <Form.Group >
+                            <Form.Label>    </Form.Label>
+                            <Form.Control style={{padding: 5, margin:10, width: "500px"}} type="email" placeholder="Search by author, title or genre" />
+                        </Form.Group>
+                    </Form>
+                    <br/>
+                    <Button className="closepopup" onClick = {closePopup} > Close Window</Button>
+                </Card>
+            )}
             </Container>
 
             </div>

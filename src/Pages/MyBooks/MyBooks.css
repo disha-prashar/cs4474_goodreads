@@ -245,7 +245,18 @@ button{
     box-shadow: 0px 0px 2px 2px #663A21;
     width: 200px;
 }
-
+.closepopup:hover{
+    background-color: #AD9080;
+    border-color: #663A21;
+}
+.closepopup:active{
+    background-color: #AD9080;
+    border-color: #663A21;
+}
+.closepopup:focus{
+    background-color: #AD9080;
+    border-color: #663A21;
+}
 .popupheader{
     background-color: #AD9080 ;
     border-style: none;

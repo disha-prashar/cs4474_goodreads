@@ -89,6 +89,20 @@
         "rating": 4.34,
         "image": "https://m.media-amazon.com/images/I/71WSzS6zvCL._AC_UF1000,1000_QL80_.jpg",
         "description": "In the ruins of a place once known as North America lies the nation of Panem, a shining Capitol..."
+    },
+    {
+        "title": "The Three-Body Problem",
+        "author": "Cixin Liu",
+        "rating": 4.8,
+        "image": "https://m.media-amazon.com/images/I/818l7Ujz5-L._SY522_.jpg",
+        "description":  "Set against the backdrop of China's Cultural Revolution, a secret military project sends signals..."
+    },
+    {
+        "title": "Dog Man: The Scarlet Shedder: A Graphic Novel",
+        "author": "Dav Pilkey",
+        "rating": 4.8,
+        "image": "https://m.media-amazon.com/images/I/713-J3tw46L._SY522_.jpg",
+        "description": "P.U.! Dog Man got sprayed by a skunk! After being dunked in tomato juice, the stink is gone but the scarlet..."
     }]
 }
 

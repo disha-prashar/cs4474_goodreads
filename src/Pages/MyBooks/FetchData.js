@@ -41,15 +41,7 @@ function FetchData({data, s}){
     return(
         <Container fluid>
         
-            {data.map((b) => {
-                return (
-                    <div className="bookR" key={b.title}>
-                        <img className = "cardi" src={b.image} alt ="book"/> 
-                        <Rating className ="stars" value={b.rating} precision={0.5} size = "small" style={{marginLeft:35}}readOnly/>
-                    </div>
-                    
-                );
-            })}
+           
             {data.map((book) => (
                     <OverlayTrigger
                         key={book.title}
@@ -58,12 +50,12 @@ function FetchData({data, s}){
                         overlay={generatePopover(book)}>
                         <div className="bookR">
                             <img className="cardi" src={book.image} alt="book cover" />
-                            <Rating className="stars" value={book.rating} precision={0.05} size="small" readOnly />
+                            <Rating className="stars" value={book.rating} precision={0.05} size="small" style={{marginLeft: 35}} readOnly />
                         </div>
                     </OverlayTrigger>
                 ))}
         
-            <Button onClick = {showPopup} className="bookR"  style={{verticalAlign:"top", height: 260, borderStyle:"none", marginTop: 40, backgroundColor: "#FFF9F0", color: "#663A21"}}>
+            <Button onClick = {showPopup} className="bookR"  style={{verticalAlign:"top", height: 240, borderStyle:"none", marginTop: 40, backgroundColor: "#FFF9F0", color: "#663A21"}}>
                 <startIcon><AddIcon className="add"/></startIcon><br/>
                 <h3 style={{marginTop: 20}}>Add Books</h3>
             </Button>
