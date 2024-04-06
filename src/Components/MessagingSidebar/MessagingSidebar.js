@@ -20,18 +20,18 @@ function Sidebar() {
       <div className="sidebar">
           <div className='icon'>
             <ul>
-          <li href='#'><AccountCircleOutlinedIcon style={{color: "#663A21", height: "48px", width: "48px"}}/></li>
-          <li className='iconButton' style={selectedIcon === 'direct messaging' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('direct messaging')}><img src={dms} alt='DMs'/></li>
-          <li className='iconButton' style={selectedIcon === 'book clubs' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('book clubs')}><img src={groupChat} alt='Book Clubs'/> </li>
-          <li className='iconButton' style={selectedIcon === 'author updates' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('author updates')}><img src={updates} alt='Author Updates'/> </li>
-        </ul>
+              <li href='#'><AccountCircleOutlinedIcon style={{color: "#663A21", height: "48px", width: "48px"}}/></li>
+              <li className='iconButton' style={selectedIcon === 'direct messaging' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('direct messaging')}><img src={dms} alt='DMs'/></li>
+              <li className='iconButton' style={selectedIcon === 'book clubs' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('book clubs')}><img src={groupChat} alt='Book Clubs'/> </li>
+              <li className='iconButton' style={selectedIcon === 'author updates' ? {backgroundColor: '#663A2136'} : {}} onClick={() => handleIconClick('author updates')}><img src={updates} alt='Author Updates'/> </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <DMs messagingView={selectedIcon}/>
-    <div style={{display: 'flex', flexDirection: 'column', flex: '1'}}>
-      <Conversation></Conversation>
-    </div>
-  </>
+        <DMs messagingView={selectedIcon}/>
+        <div style={{display: 'flex', flexDirection: 'column', flex: '1'}}>
+          <Conversation/>
+        </div>
+    </>
   );
 }
 
