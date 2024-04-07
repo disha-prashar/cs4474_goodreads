@@ -3,13 +3,15 @@ import Phone from '../../Components/Chat/Images/phone.png';
 import Video from '../../Components/Chat/Images/video.png';
 
 //single chat element
-const ChatElement = ({id,name, img, msg, time,online, unread}) => {
+const ChatElement = ({id,name, img, msg, time,online, unread, onClick}) => {
     return (
       <Box sx={{
         width: "100%",
         borderBottom: "1px solid #663A21", 
       }}
-        p={2}>
+        p={2}
+        onClick={onClick} // Attach onClick event handler
+        style={{ cursor: "pointer" }}>
         <Stack direction="row" alignItems='center' justifyContent='space-between'>
           <Stack direction='row' spacing={2}>
               <Avatar style={{height:"60px", width: "60px"}}  src={img} />

@@ -113,9 +113,9 @@ const TextMsg = ({el,menu}) => {
         <Stack direction='row' justifyContent={el.incoming ? 'start' : 'end'}>
             <Box p={1.5} sx={{
                 backgroundColor: el.incoming ? theme.palette.background.default :
-                '#AD9080', borderRadius: 1.5, width: 'max-content'
+                '#AD9080', borderRadius: 1.5, maxWidth: '80%'
             }}>
-                <Typography variant='body2' color={el.incoming ? theme.palette.text : '#fff'}>
+                <Typography variant='body2' color={el.incoming ? theme.palette.text : '#fff'} sx={{ overflowWrap: 'break-word' }}>
                     {el.message}
                 </Typography>
             </Box>
@@ -147,15 +147,6 @@ const MessageOptions = () => {
   };
   return (
     <>
-    <DotsThreeVertical 
-    id="basic-button"
-    aria-controls={open ? 'basic-menu' : undefined}
-    aria-haspopup="true"
-    aria-expanded={open ? 'true' : undefined}
-    onClick={handleClick}
-    size={20}
-    />
-
     <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -175,6 +166,4 @@ const MessageOptions = () => {
   )
 }
 
-
-// should not be default export, because we need to export multiple things
 export { TimeLine, TextMsg, MediaMsg, ReplyMsg, LinkMsg, DocMsg }

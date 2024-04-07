@@ -1,4 +1,3 @@
-// Sidebar.js
 import React, { useEffect, useState } from 'react';
 import './MessagingSidebar.css'; 
 import dms from './dms.png';
@@ -6,10 +5,9 @@ import updates from './book.png';
 import groupChat from './conversation.png';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import DMs from '../../Components/Chat/DMs';
-import Conversation from '../../Components/Chat/Conversation';
 
 function Sidebar() {
-  const [selectedIcon, setSelectedIcon] = React.useState('direct messaging');
+  const [selectedIcon, setSelectedIcon] = useState('direct messaging');
 
   const handleIconClick = (icon) => {
     setSelectedIcon(icon);
@@ -28,9 +26,6 @@ function Sidebar() {
           </div>
         </div>
         <DMs messagingView={selectedIcon}/>
-        <div style={{display: 'flex', flexDirection: 'column', flex: '1'}}>
-          <Conversation/>
-        </div>
     </>
   );
 }
