@@ -2,19 +2,17 @@
 import React from 'react';
 import './BestBooks.css'; // Import CSS for styling if needed
 import Carousel from './Carousel';
-import art1 from './images/art1.jpg';
-import art2 from './images/art2.jpg';
-import art3 from './images/art3.jpg';
+import art from './images/art.jpg';
+import fantasy from './images/fantasy.jpg';
+import horror from './images/horror.jpg';
 import choice_awards_logo from './images/choice_awards_logo.png';
-
-console.log(choice_awards_logo);
 
 function BestBooksSection() {
 
     const items = [
-        { src: art1, alt: 'Image 1' },
-        { src: art2, alt: 'Image 2' },
-        { src: art3, alt: 'Image 3' },
+        { src: art, alt: 'Art' },
+        { src: fantasy, alt: 'Fantasy' },
+        { src: horror, alt: 'Horror' },
     ];
 
     return (

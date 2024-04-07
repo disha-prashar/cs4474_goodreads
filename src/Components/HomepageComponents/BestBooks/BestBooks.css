@@ -1,11 +1,13 @@
 .bestBooksSection { /* outer container */
     display: flex;
-    height: 400px;
+    height: 450px;
 }
 
 .announcement-container {
-    background-color: #AD9080;
+    /* background-color: #AD9080; */
+    background-image: url("bkg-30.jpg");
     flex: 1;
+    margin-left: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,6 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 200px;
     /* padding: 0 20px; */
     /* flex: 0 0 50%; */
 }

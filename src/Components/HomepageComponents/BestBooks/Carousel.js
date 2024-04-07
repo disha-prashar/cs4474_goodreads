@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Carousel.css'; // Import CSS for styling
+import { Link } from 'react-router-dom';
 
 const Carousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,7 +23,9 @@ const Carousel = ({ items }) => {
           if (position < 0) position += totalItems;
           return (
             <div key={index} className={`item ${position === 1 ? 'active' : ''}`}>
-              <img src={item.src} alt={item.alt} /> {/* className="carousel-image" */}
+              <img src={item.src} alt={item.alt} />
+              {/* <a href="" className="link">{item.alt}</a> */}
+              <Link to={`/${item.alt}Books`} className="link">{item.alt}</Link>
             </div>
           );
         })}

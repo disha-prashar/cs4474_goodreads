@@ -9,6 +9,9 @@ import WantToReadView from './Pages/MyBooks/WantToReadView'
 import ReadView from './Pages/MyBooks/ReadView';
 import SignUpLogin from './Pages/Home/SignUpLogin/SignUpLogin'
 import {Route, Routes, Navigate} from "react-router-dom";
+import ArtBooks from './Pages/Home/BestBooksViews/ArtBooks';
+import FantasyBooks from './Pages/Home/BestBooksViews/FantasyBooks';
+import HorrorBooks from './Pages/Home/BestBooksViews/HorrorBooks';
 
 function App() {
   const [username, setUsername] = useState('');
@@ -29,6 +32,9 @@ function App() {
           <Route path="/WantToReadView" element = {<WantToReadView />} />
           <Route path="/ReadView" element = {<ReadView />} />
           <Route path="/SignUpLogin" element={<SignUpLogin setUsername={setUsername} onLogin={handleLogin} />} />
+          <Route path="/ArtBooks" element = {<ArtBooks />} />
+          <Route path="/FantasyBooks" element = {<FantasyBooks />} />
+          <Route path="/HorrorBooks" element = {<HorrorBooks />} />
         </Routes>
       </>
   );
