@@ -60,7 +60,7 @@ function MyBooks() {
                     </Col>
                     <Col xs = {9}>
                         <div className='bookshelf'>
-                            <Container fluid style = {{paddingTop: 10}}>
+                            <Container fluid style = {{paddingTop: 0}}>
                                 <Row >
                                     <Col xs = {10}>
                                         <h2>Reading</h2>
