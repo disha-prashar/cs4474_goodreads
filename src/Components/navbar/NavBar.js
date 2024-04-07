@@ -29,7 +29,7 @@ function NavBar() {
                 <CustomLink to='/Home'><img src = {home} alt = "Home" /></CustomLink>
                 <CustomLink to='/Messages'><img src = {message} alt = "Messages"/></CustomLink>
                 <CustomLink to='/MyBooks'><img src = {mybooks} alt = "MyBooks"/></CustomLink>
-                <Nav.Link href='#'><img src = {notif} alt = "Notifications"/></Nav.Link>
+                <CustomLink to='/Home'><img src = {notif} alt = "Notifications"/></CustomLink>
             </Nav>
         <Nav className='profile'>
             <Nav.Link href='#'><AccountCircleOutlinedIcon style={{color: "#663A21", height: "37px", width: "37px"}}/></Nav.Link>
