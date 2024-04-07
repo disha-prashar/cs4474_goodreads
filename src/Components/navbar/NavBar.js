@@ -14,7 +14,7 @@ import './navbar.css';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { Link, useResolvedPath, resolvedPath, useMatch } from 'react-router-dom';
 
-function NavBar() {
+function NavBar({ username }) {
   return (
     <Navbar expand={'lg'} className='navb'>
         <Navbar.Brand><img src = {logo} alt = "Logo" style = {{margin:40}}/></Navbar.Brand>
@@ -33,7 +33,7 @@ function NavBar() {
             </Nav>
         <Nav className='profile'>
             <Nav.Link href='#'><AccountCircleOutlinedIcon style={{color: "#663A21", height: "37px", width: "37px"}}/></Nav.Link>
-            <Navbar.Text style ={{paddingLeft: "10px"}}>Jane Doe</Navbar.Text>
+            <Navbar.Text style={{ paddingLeft: "10px" }}>{username ? username : 'Login'}</Navbar.Text>
         </Nav>
         
     </Navbar>

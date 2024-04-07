@@ -1,30 +1,33 @@
-// Sidebar.js
-import React from 'react';
+import React, { useState } from 'react';
 import './ReadingChallenge.css'; // Import CSS for styling if needed
 import ReadingChallengeLogo from './ReadingChallengeLogo.png';
 import ReadingChallengeBanner from './ReadingChallengeBanner.png';
-import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-function ReadingChallengeSection() {
 
-    let navigate = useNavigate(); 
-    const routeChange = () =>{ 
-        let path = `/Messages`; 
-        navigate(path);
-    }
+function ReadingChallengeSection() {
+    const [activeTab, setActiveTab] = useState('signup');
+
+    const handleTabChange = (tab) => {
+        setActiveTab(tab);
+    };
 
     return (
         <div className="readingChallengeSection">
             <div className='joinChallenge'>
-                <p class="p1">Join the challenge</p>
-                <p class="p2">Whether you aim to read a stack of classics or explore the latest bestsellers - The Reading Challenge empowers you to set a personalized goal and join a community of fellow bookworms.</p>
+                <p className="p1">Join the challenge</p>
+                <p className="p2">Whether you aim to read a stack of classics or explore the latest bestsellers - The Reading Challenge empowers you to set a personalized goal and join a community of fellow bookworms.</p>
                 <div>
-                    <Button className="signUpButton" onClick={routeChange}>
-                        Sign Up
-                    </Button>
-                    <Button className="loginButton" onClick={routeChange}>
-                        Login
-                    </Button>
+                    <Link to={{ pathname: "/SignUpLogin", state: { activeTab: 'signup' } }}>
+                        <Button className="signUpButton" onClick={() => handleTabChange('signup')}>
+                            Sign Up
+                        </Button>
+                    </Link>
+                    <Link to={{ pathname: "/SignUpLogin", state: { activeTab: 'login' } }}>
+                        <Button className="loginButton" onClick={() => handleTabChange('login')}>
+                            Login
+                        </Button>
+                    </Link>
                 </div>
             </div>
             <div className="challengeImage">

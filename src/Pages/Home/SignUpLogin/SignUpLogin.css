@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+  
+.signup-login-container {
+    width: 400px; /* Adjust width as needed */
+    border: 2px solid #663A21; /* Add border for visual separation */
+    border-radius: 8px;
+    padding: 20px;
+    /* Add margin-top to push it down from the top */
+    margin-top: 50px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* Add margin between tabs and form */
+}
+
+.tabs button {
+    padding: 10px 20px;
+    margin: 10px;
+    margin-top: 20px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #663A21;
+    border-radius: 10%;
+}
+
+.tabs button.active {
+    font-weight: bold;
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+.signup-form,
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-form input,
+.login-form input,
+.signup-form button,
+.login-form button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+}
+
+.signup-form button,
+.login-form button {
+    background-color: #663A21;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.signup-form button:hover,
+.login-form button:hover {
+    background-color: #AD9080;
+}
