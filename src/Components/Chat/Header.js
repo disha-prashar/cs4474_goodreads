@@ -69,9 +69,6 @@ const Conversation_Menu = [
 
 const ChatHeader = ({messagingView, clickedChat}) => {
   const [searchParams, setSearchParams] = useSearchParams();
-
-  const [selectedConvo, setSelectedConvo] = 
-    useState(null);
   
   const [selectedUser, setSelectedUser] = useState(null);
 
@@ -90,11 +87,6 @@ const ChatHeader = ({messagingView, clickedChat}) => {
   
   useEffect(() => {
     if (clickedChat !== undefined) {
-      setSelectedConvo(
-        messagingView === "author updates"
-          ? SampleChatAuthorUpdates[clickedChat] || null
-          : SampleChatDMs[clickedChat] || null
-      );
       setSelectedUser(
         messagingView === "author updates"
           ? AuthorUpdatesList?.find(author => author.name === clickedChat) || null
@@ -102,18 +94,13 @@ const ChatHeader = ({messagingView, clickedChat}) => {
       )
     }
     else {
-      setSelectedConvo(
-        messagingView === "author updates"
-          ? SampleChatAuthorUpdates["Colleen Hoover"] || null
-          : SampleChatDMs["Audrey Miller"] || null
-      );
       setSelectedUser(
         messagingView === "author updates"
           ? AuthorUpdatesList[0] || null
           : MembersList[0] || null
       )
     }
-    console.log("selected is", selectedConvo, selectedUser);
+    console.log("selected is", selectedUser);
   }, [clickedChat, messagingView]);
 
   return (
@@ -136,7 +123,7 @@ const ChatHeader = ({messagingView, clickedChat}) => {
           (<img src={phoneIcon} style={{height: 50, width: 50}}></img>)
         }
         <Box> 
-          {selectedConvo &&(
+          {selectedUser &&(
           <Stack direction="column" alignItems="center">
             <StyledBadge
               overlap="circular"

@@ -10,9 +10,6 @@ import Message from './Message';
 const DMs = ({messagingView}) => {
   
   const [clickedChat, setClickedChat] = useState(null);
-  //  useState(messagingView === 'author updates' ?
-  //   AuthorUpdatesList.find(author => author === clickedChat) : 
-  //   MembersList.find(author => author === clickedChat));
 
   useEffect(() => {
     if (clickedChat === null) {
@@ -71,11 +68,11 @@ const DMs = ({messagingView}) => {
     <Stack height={'87%'} maxHeight={'100vh'} width={'auto'}>
         <Header messagingView={messagingView} clickedChat={clickedChat}/>
         <Box className='scrollbar' width={"100%"} sx={{overflowY:'scroll'}}>
-            <Message menu={true} messagingView={messagingView}/>
+            <Message menu={true} messagingView={messagingView} clickedChat={clickedChat}/>
         </Box>
-        {messagingView === 'author updates' ?
-          (<></>) : (<Footer/>)
-        }
+        {/* {messagingView !== 'author updates' &&
+          (<Footer />)
+        } */}
     </Stack>
   </div>
   </>
