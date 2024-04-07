@@ -16,7 +16,7 @@ function AuthorProgramSection() {
         <div className="section">
             <div className="separator"></div>
             <div className="authorProgramSection">
-                <p class="p1">Are you an author or a publisher?</p>
+                <p class="programTitle">Are you an author or a publisher?</p>
                 <p class="p2">Gain access to a massive audience of book lovers.</p>
                 <p class="p2">Goodreads is a great place to promote your books.</p>
                 <div>
