@@ -12,10 +12,10 @@ import { OverlayTrigger, Popover} from 'react-bootstrap';
 import AddIcon from '@mui/icons-material/Add';
 import { Button, Card, Form } from "react-bootstrap";
 
-let temp = "";
+
 
 function MyBooks() {
-    const data = book_data;
+    
     const [popupVisible, setPopupVisible] = useState(false);
     
     function showPopup(){
@@ -80,7 +80,7 @@ function MyBooks() {
                                         overlay={generatePopover(book)}
                                     >
                                         <div className="card">
-                                            <img src={book.image} alt="book cover" />
+                                            <img src={book.image} alt="book cover" style={{width: 166, height: 243}}/>
                                             <Rating className="stars" value={book.rating} precision={0.05} size="small" readOnly />
                                         </div>
                                      </OverlayTrigger>   
@@ -112,7 +112,7 @@ function MyBooks() {
                                         overlay={generatePopover(book)}
                                     >
                                         <div className="card">
-                                            <img src={book.image} alt="book cover" />
+                                            <img src={book.image} alt="book cover" style={{width: 166, height: 243}}/>
                                             <Rating className="stars" value={book.rating} precision={0.05} size="small" readOnly />
                                         </div>
                                     </OverlayTrigger>
@@ -159,17 +159,21 @@ function MyBooks() {
                 </Row>
             
             {popupVisible && (
-                <Card className="text-center" style = {{width: '40rem', height: "20rem", borderStyle: "solid", padding: 20, borderWidth: 5, borderColor: "#663A21", position:"fixed", top:"50%", left:"40%", alignItems:"center", backgroundColor: "#FFF9F0"}}>
-                    <Card.Header className = "popupheader" style={{width: "100%", fontSize:10}}><h3>Add Book</h3></Card.Header>
-                    <Form>
-                        <Form.Group >
-                            <Form.Label>    </Form.Label>
-                            <Form.Control style={{padding: 5, margin:10, width: "500px"}} type="email" placeholder="Search by author, title or genre" />
-                        </Form.Group>
-                    </Form>
-                    <br/>
-                    <Button className="closepopup" onClick = {closePopup} > Close Window</Button>
-                </Card>
+                <Card className="text-center" style = {{width: '40rem', height: "25rem", borderStyle: "solid", padding: 20, borderWidth: 2, borderColor: "#663A21", position:"fixed", top:"30%", left:"30%", alignItems:"center", backgroundColor: "#FFFFFF", boxShadow: "0px 0px 10px 5px #AD9080"}}>
+                <Card.Header className = "popupheader" style={{width: "100%", fontSize:10}}><h1>Add Book</h1></Card.Header>
+                <Form>
+                    <Form.Group >
+                        <Form.Label>    </Form.Label>
+                        <Form.Control style={{padding: 5, margin:10, width: "500px", borderStyle: "solid", borderWidth:"1px", borderColor: "#663A21"}} type="email" placeholder="Search by author, title or genre" />
+                    </Form.Group>
+                </Form>
+                <br/>
+                <Button className="addbook">Add to Bookshelf</Button>
+                <br/>
+                <br/>
+                <br/>
+                <Button className="closepopup" onClick = {closePopup} > Close Window</Button>
+            </Card>
             )}
             </Container>
 
