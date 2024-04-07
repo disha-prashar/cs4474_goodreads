@@ -147,14 +147,14 @@ const MessageOptions = () => {
   };
   return (
     <>
-    <DotsThreeVertical 
+    {/* <DotsThreeVertical 
     id="basic-button"
     aria-controls={open ? 'basic-menu' : undefined}
     aria-haspopup="true"
     aria-expanded={open ? 'true' : undefined}
     onClick={handleClick}
     size={20}
-    />
+    /> */}
 
     <Menu
         id="basic-menu"
@@ -175,6 +175,4 @@ const MessageOptions = () => {
   )
 }
 
-
-// should not be default export, because we need to export multiple things
 export { TimeLine, TextMsg, MediaMsg, ReplyMsg, LinkMsg, DocMsg }

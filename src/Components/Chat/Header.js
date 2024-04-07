@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import {
   Avatar,
   Badge,
   Box,
+  ClickAwayListener,
   Divider,
   Fade,
   IconButton,
@@ -11,13 +12,16 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { styled,useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import { CaretDown, MagnifyingGlass, Phone, VideoCamera } from "phosphor-react";
 import { faker } from "@faker-js/faker";
 import { useSearchParams } from "react-router-dom";
 import useResponsive from "../Hooks/useResponsive";
 import phoneIcon from '../../Components/Chat/Images/phone.png';
 import videoIcon from '../../Components/Chat/Images/video.png';
+import { MembersList, AuthorUpdatesList } from "../Data";
+import { click } from "@testing-library/user-event/dist/click";
+import { SampleChatAuthorUpdates, SampleChatBookClubs, SampleChatDMs } from "../Data";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -63,18 +67,54 @@ const Conversation_Menu = [
   },
 ];
 
-const ChatHeader = () => {
+const ChatHeader = ({messagingView, clickedChat}) => {
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const [selectedConvo, setSelectedConvo] = 
+    useState(null);
+  
+  const [selectedUser, setSelectedUser] = useState(null);
 
   const [conversationMenuAnchorEl, setConversationMenuAnchorEl] =
     React.useState(null);
+
   const openConversationMenu = Boolean(conversationMenuAnchorEl);
+
   const handleClickConversationMenu = (event) => {
     setConversationMenuAnchorEl(event.currentTarget);
   };
+
   const handleCloseConversationMenu = () => {
     setConversationMenuAnchorEl(null);
   };
+  
+  useEffect(() => {
+    if (clickedChat !== undefined) {
+      setSelectedConvo(
+        messagingView === "author updates"
+          ? SampleChatAuthorUpdates[clickedChat] || null
+          : SampleChatDMs[clickedChat] || null
+      );
+      setSelectedUser(
+        messagingView === "author updates"
+          ? AuthorUpdatesList?.find(author => author.name === clickedChat) || null
+          : MembersList?.find(member => member.name === clickedChat) || null
+      )
+    }
+    else {
+      setSelectedConvo(
+        messagingView === "author updates"
+          ? SampleChatAuthorUpdates["Colleen Hoover"] || null
+          : SampleChatDMs["Audrey Miller"] || null
+      );
+      setSelectedUser(
+        messagingView === "author updates"
+          ? AuthorUpdatesList[0] || null
+          : MembersList[0] || null
+      )
+    }
+    console.log("selected is", selectedConvo, selectedUser);
+  }, [clickedChat, messagingView]);
 
   return (
     <Box
@@ -91,10 +131,12 @@ const ChatHeader = () => {
         direction="row"
         alignItems={"center"}
       >
-        <img src={phoneIcon} style={{height: 50, width: 50}}></img>
-
-        {/*  Avatar picture on top of name */}
-        <Box>
+        { messagingView == 'author updates' ?
+          (<></>) : 
+          (<img src={phoneIcon} style={{height: 50, width: 50}}></img>)
+        }
+        <Box> 
+          {selectedConvo &&(
           <Stack direction="column" alignItems="center">
             <StyledBadge
               overlap="circular"
@@ -102,16 +144,19 @@ const ChatHeader = () => {
                 vertical: "bottom",
                 horizontal: "right",
               }}
-              variant="dot"
+              variant={messagingView === 'author updates' ? undefined : "dot"}
             >
-            <Avatar sx={{ width: 80, height: 80 }} alt={faker.name.fullName()} src={faker.image.avatar()} />
+            <Avatar sx={{ width: 80, height: 80 }} alt={selectedUser?.name} src={selectedUser?.img} />
             </StyledBadge>
             <Typography variant="subtitle2" fontSize={18} fontWeight={"bold"} color={'#663A21'} fontFamily={"DM Sans"}>
-              {faker.name.fullName()}
+              {selectedUser?.name}
             </Typography>
-          </Stack>
+          </Stack>)}
         </Box>
-        <img src={videoIcon} style={{height: 50, width: 50}}></img>
+        { messagingView == 'author updates' ?
+          (<></>) : 
+          (<img src={videoIcon} style={{height: 50, width: 50}}></img>)
+        }
       </Stack>
       <IconButton
         id="conversation-positioned-button"
@@ -120,8 +165,7 @@ const ChatHeader = () => {
         }
         aria-haspopup="true"
         aria-expanded={openConversationMenu ? "true" : undefined}
-        onClick={handleClickConversationMenu}
-        style={{outline:'none'}}>
+        onClick={handleClickConversationMenu}>
           <CaretDown color={'#663A21'}/>
         </IconButton>
           <Menu

@@ -9,7 +9,7 @@ import DMs from '../../Components/Chat/DMs';
 import Conversation from '../../Components/Chat/Conversation';
 
 function Sidebar() {
-  const [selectedIcon, setSelectedIcon] = React.useState('direct messaging');
+  const [selectedIcon, setSelectedIcon] = useState('direct messaging');
 
   const handleIconClick = (icon) => {
     setSelectedIcon(icon);
@@ -28,9 +28,9 @@ function Sidebar() {
           </div>
         </div>
         <DMs messagingView={selectedIcon}/>
-        <div style={{display: 'flex', flexDirection: 'column', flex: '1'}}>
-          <Conversation/>
-        </div>
+        {/* <div style={{display: 'flex', flexDirection: 'column', flex: '1'}}>
+          <Conversation messagingView={selectedIcon}/>
+        </div> */}
     </>
   );
 }
