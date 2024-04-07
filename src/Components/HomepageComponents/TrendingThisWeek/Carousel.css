@@ -1,0 +1,85 @@
+/* Carousel.css */
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the carousel */
+  padding-top: 20px; /* Add some padding to the top to avoid overlapping */
+  position: relative; /* Add relative positioning */
+  z-index: 1; /* Ensure the carousel is below the title */
+}
+
+.items-container {
+  display: flex;
+  gap: 20px; /* Adjust gap between items */
+  padding: 0; /* Remove any padding that might cause misalignment */
+}
+
+.item {
+  width: 180px; /* Adjust the width if needed to prevent overlap */
+  margin: 0; /* Adjust or remove margin to fit the design */
+    margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.item img {
+  width: 100%; /* Make the image fill the width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the area without stretching */
+}
+
+/* Ensure text does not overflow and is fully visible */
+.book-title, .author, .star-rating {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.item.active {
+  transform: scale(1.1); /* Adjust scale for active item */
+}
+
+.arrow {
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  z-index: 2; /* Make sure arrows are on top */
+}
+
+.book-title {
+  font-size: 0.8rem; /* Slightly smaller font size */
+  margin: 2px 0; /* Smaller margins */
+}
+
+.author {
+  font-size: 0.7rem; /* Smaller font size */
+  color: grey;
+  margin: 2px 0; /* Smaller margins */
+}
+
+.star-rating {
+  font-size: 0.7rem; /* Smaller star size */
+  display: flex;
+  justify-content: center;
+  margin: 5px 0; /* Adjust margin as needed */
+}
+
+/* Style adjustments for the star ratings */
+.star-rating:before {
+  content: '★★★★★';
+  letter-spacing: 1px; /* Less space between stars */
+  background: linear-gradient(90deg, #ffc107 calc(var(--rating) * 1%), #e4e5e9 calc(var(--rating) * 1%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  text-align: center;
+  height: 1rem;
+  line-height: 1rem;
+}
