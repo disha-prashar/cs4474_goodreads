@@ -25,9 +25,9 @@ const TrendingThisWeek = () => {
   return (
     <div className="trendingSection">
       <h2 className="trendingTitle">Trending This Week</h2>
-      <div className="trendingBooksContainer">
-        <Carousel items={trendingBooks} />
-      </div>
+        <div className="trendingBooksContainer">
+            <Carousel items={trendingBooks}/>
+        </div>
     </div>
   );
 };
