@@ -48,30 +48,34 @@ function FetchData({data, s}){
                         trigger="hover"
                         placement="left"
                         overlay={generatePopover(book)}>
-                        <div className="bookR">
-                            <img className="cardi" src={book.image} alt="book cover" />
+                        <div className="bookR" style={{width: 166, margin:40}}>
+                            <img className="cardi" src={book.image} alt="book cover" style={{width: 166, height: 243}} />
                             <Rating className="stars" value={book.rating} precision={0.05} size="small" style={{marginLeft: 35}} readOnly />
                         </div>
                     </OverlayTrigger>
                 ))}
         
-            <Button onClick = {showPopup} className="bookR-b"  style={{verticalAlign:"top", height: 240, borderStyle:"none", marginTop: 40, backgroundColor: "#FFF9F0", color: "#663A21"}}>
+            <Button onClick = {showPopup} className="bookR-b"  style={{verticalAlign:"top", height: 240, borderStyle:"none", margin: 40, marginTop: 48, backgroundColor: "#FFF9F0", color: "#663A21"}}>
                 <startIcon><AddIcon className="add"/></startIcon><br/>
                 <h3 style={{marginTop: 20}}>Add Books</h3>
             </Button>
        
             {popupVisible && (
-                <Card className="text-center" style = {{width: '40rem', height: "20rem", borderStyle: "solid", padding: 20, borderWidth: 5, borderColor: "#663A21", position:"fixed", top:"50%", left:"40%", alignItems:"center", backgroundColor: "#FFF9F0"}}>
-                    <Card.Header className = "popupheader" style={{width: "100%", fontSize:10}}><h3>Add Book</h3></Card.Header>
-                    <Form>
-                        <Form.Group >
-                            <Form.Label>    </Form.Label>
-                            <Form.Control style={{padding: 5, margin:10, width: "500px"}} type="email" placeholder="Search by author, title or genre" />
-                        </Form.Group>
-                    </Form>
-                    <br/>
-                    <Button className="closepopup" onClick = {closePopup} > Close Window</Button>
-                </Card>
+                <Card className="text-center" style = {{width: '40rem', height: "25rem", borderStyle: "solid", padding: 20, borderWidth: 2, borderColor: "#663A21", position:"fixed", top:"30%", left:"30%", alignItems:"center", backgroundColor: "#FFFFFF", boxShadow: "0px 0px 10px 5px #AD9080"}}>
+                <Card.Header className = "popupheader" style={{width: "100%", fontSize:10}}><h1>Add Book</h1></Card.Header>
+                <Form>
+                    <Form.Group >
+                        <Form.Label>    </Form.Label>
+                        <Form.Control style={{padding: 5, margin:10, width: "500px", borderStyle: "solid", borderWidth:"1px", borderColor: "#663A21"}} type="email" placeholder="Search by author, title or genre" />
+                    </Form.Group>
+                </Form>
+                <br/>
+                <Button className="addbook">Add to Bookshelf</Button>
+                <br/>
+                <br/>
+                <br/>
+                <Button className="closepopup" onClick = {closePopup} > Close Window</Button>
+            </Card>
             )}
             
             
