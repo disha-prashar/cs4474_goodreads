@@ -1,4 +1,4 @@
-import { Box, Stack } from '@mui/material'
+import { Avatar, Box, Stack, Typography } from '@mui/material'
 import React, {useState, useEffect} from 'react';
 import { SampleChatDMs, SampleChatBookClubs, SampleChatAuthorUpdates } from '../Data';
 import { DocMsg, LinkMsg, MediaMsg, ReplyMsg, TextMsg, TimeLine } from './MsgTypes';
@@ -10,17 +10,20 @@ const Message = ({menu, messagingView, clickedChat}) => {
       setSelectedConvo(
         messagingView === "author updates"
           ? SampleChatAuthorUpdates[clickedChat] || null
-          : SampleChatDMs[clickedChat] || null
+          : messagingView === "book clubs" 
+              ? SampleChatBookClubs
+              : SampleChatDMs[clickedChat] || null
       );
     }
     else {
       setSelectedConvo(
         messagingView === "author updates"
           ? SampleChatAuthorUpdates["Colleen Hoover"] || null
-          : SampleChatDMs["Audrey Miller"] || null
+          : messagingView === "book clubs" 
+            ? SampleChatBookClubs
+            : SampleChatDMs["Audrey Miller"] || null
       );
     }
-    console.log("selected is", selectedConvo);
 
   }, [clickedChat, messagingView])
 
@@ -28,31 +31,43 @@ const Message = ({menu, messagingView, clickedChat}) => {
     <Box p={3}>
         <Stack spacing={3}>
             {selectedConvo && (selectedConvo.map((el)=>{
-              switch (el.type) {
-                  case 'divider':
-                    return <TimeLine el={el}/>
-                  case 'msg':
-                    switch (el.subtype) {
-                      case 'img':
-                        return <MediaMsg el={el} menu={menu}/>
-                      case 'doc':
-                        return <DocMsg el={el} menu={menu}/>
-                      case 'link':
-                        return <LinkMsg el={el} menu={menu}/>
-                      case 'reply':
-                        return <ReplyMsg el={el} menu={menu}/>
-                      default:
-                        return <TextMsg el={el} menu={menu}/>
-                    }
-                  break;
-                  default:
-                    return <></>;
+              if (el.type === 'divider') {
+                return <TimeLine el={el} />;
+            } else if (el.type === 'msg') {
+                let messageComponent;
+                switch (el.subtype) {
+                    case 'img':
+                        messageComponent = <MediaMsg el={el} menu={menu} />;
+                        break;
+                    case 'doc':
+                        messageComponent = <DocMsg el={el} menu={menu} />;
+                        break;
+                    case 'link':
+                        messageComponent = <LinkMsg el={el} menu={menu} />;
+                        break;
+                    case 'reply':
+                        messageComponent = <ReplyMsg el={el} menu={menu} />;
+                        break;
+                    default:
+                        messageComponent = <TextMsg el={el} menu={menu} />;
                 }
-              }))}
-          
+                if (el.profile) {
+                    return (
+                        <Stack key={el.id} spacing={1} direction="row">
+                          <Avatar style={{height:"50px", width: "50px"}}  src={el.profile} />
+                            {messageComponent}
+                        </Stack>
+                    );
+                } else {
+                    return messageComponent;
+                }
+            } else {
+                return <></>;
+            }
+            }))}  
         </Stack>
-    </Box>
-  )
+    </Box> 
+    )
 }
 
 export default Message

@@ -96,7 +96,7 @@ const MediaMsg = ({el,menu}) => {
                 '#AD9080', borderRadius: 1.5, width: 'max-content'
             }}>
                 <Stack spacing={1}>
-                    <img src={el.img} alt={el.message} style={{maxHeight: 210 , borderRadius:'10px'}}/>
+                    <img src={el.img} alt={el.message} style={{maxHeight: 300, borderRadius:'10px'}}/>
                     <Typography variant='body2' color={el.incoming ? theme.palette.text : '#fff'}>
                         {el.message}
                     </Typography>

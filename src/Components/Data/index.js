@@ -13,6 +13,10 @@ import author1 from '../../Components/Chat/Images/colleen_hoover.jpeg';
 import julie from '../../Components/Chat/Images/julie.jpeg';
 import author2 from '../../Components/Chat/Images/rick_riordan.jpeg';
 import author3  from '../../Components/Chat/Images/sarah_jmaas.jpeg';
+import cover1 from '../../Components/Chat/Images/hopeless.jpg';
+import naomi from '../../Components/Chat/Images/naomi.avif';
+import josh from '../../Components/Chat/Images/josh.jpeg';
+import cover from '../../Components/Chat/Images/cover.jpeg';
 
 
 const Profile_Menu = [
@@ -52,44 +56,6 @@ const Nav_Setting = [
   },
 ];
 
-const CallLogs = [
-  {
-    id:0,
-    img: faker.image.avatar(),
-    name: faker.name.firstName(),
-    missed: false,
-    incoming: true,
-  },
-  {
-    id:1,
-    img: faker.image.avatar(),
-    name: faker.name.firstName(),
-    missed: true,
-    incoming: true,
-  },
-  {
-    id:2,
-    img: faker.image.avatar(),
-    name: faker.name.firstName(),
-    missed: false,
-    incoming: false,
-  },
-  {
-    id:3,
-    img: faker.image.avatar(),
-    name: faker.name.firstName(),
-    missed: false,
-    incoming: true,
-  },
-  {
-    id:4,
-    img: faker.image.avatar(),
-    name: faker.name.firstName(),
-    missed: true,
-    incoming: true,
-  }
-];
-
 const AuthorUpdatesList = [
   {
     id:0,
@@ -114,20 +80,82 @@ const AuthorUpdatesList = [
   }
 ];
 
+const BookClubsList = {
+  "bookworms": [
+    {
+      id: 7,
+      img: julie,
+      name: "Julia Sims",
+      online: true,
+    },
+    {
+      id: 5,
+      img: naomi,
+      name: "Naomi Fin",
+      online: true,
+    },
+    {
+      id: 6,
+      img: josh,
+      name: "Josh Richards",
+      online: false,
+    }
+  ]
+}
+
+const SampleChatBookClubs = [
+  {
+    type: "msg",
+    message: "Hi! 👋🏻, How are you guys doing? Did want to maybe hop on call later today?",
+    name: "Julie Sims",
+    incoming: true,
+    outgoing: false,
+    profile: julie
+  },
+  {
+    type: "divider",
+    text: "2 mins ago",
+  },
+  {
+    type: "msg",
+    message: "Yes! I can't wait to talk about Chapter 6, it was epic.",
+    incoming: false,
+    outgoing: true,
+  },
+  {
+    type: "msg",
+    subtype: "img",
+    message: "I vote we read this next! Looks interesting.",
+    img: cover,
+    name: "Naomi Fin",
+    incoming: true,
+    outgoing: false,
+    profile: naomi
+  },
+  {
+    type: "msg",
+    message: "Ooh Agreed! Got this recommended to me too",
+    name: "Josh Richards",
+    incoming: true,
+    outgoing: false,
+    profile: josh
+  }
+];
+
 const MembersList = [
   {
     id:3,
     img: audrey,
     name: "Audrey Miller",
     online: true,
-    msg: "Hi, did you finish that page yet?"
+    msg: "Nice!"
   },
   {
     id:4,
     img: julie,
     name: "Julia Sims",
     online: true,
-    msg: "Can you call me later? I..."
+    msg: "Yep! Here you go"
   }
 ];
 
@@ -154,8 +182,8 @@ const SampleChatDMs = {
       subtype: "img",
       message: "Did finish this today though",
       img: faker.image.abstract(),
-      incoming: true,
-      outgoing: false,
+      incoming: false,
+      outgoing: true,
     },
     {
       type: "msg",
@@ -175,40 +203,18 @@ const SampleChatDMs = {
     },
     {
       type: "msg",
-      message: "Can you please send this in file format?",
+      message: "Thanks! Do you have it in file format?",
       incoming: false,
       outgoing: true,
     },
     {
       type: "msg",
       subtype: "doc",
-      message: "Yes sure, here you go.",
+      message: "Yep! Here you go.",
       incoming: true,
       outgoing: false,
     }
-  // ],
-  
-  // {
-  //   type: "msg",
-  //   subtype: "link",
-  //   preview: faker.image.cats(),
-  //   message: "Yep, I can also do that",
-  //   incoming: true,
-  //   outgoing: false,
-  // },
-  // {
-  //   type: "msg",
-  //   subtype: "reply",
-  //   reply: "This is a reply",
-  //   message: "Yep, I can also do that",
-  //   incoming: false,
-  //   outgoing: true,
-  // },
 ]};
-
-const SampleChatBookClubs = {
-  
-};
 
 const SampleChatAuthorUpdates = {
   'Colleen Hoover': [
@@ -219,6 +225,14 @@ const SampleChatAuthorUpdates = {
     {
       type: "msg",
       message: `Hi dear readers!\n\nI’d like to personally thank each of you for following me on my journey of writing. I am releasing a new romance thriller coming out in a few months and would love to offer you all a special sneak peek!\n\nI’ve attached the front cover to this message along with the book’s preface! I hope you all enjoy and are as excited as I am!\n\nThank you all!`,
+      incoming: true,
+      outgoing: false,
+    },
+    {
+      type: "msg",
+      subtype: "img",
+      message: "As requested...",
+      img: cover1,
       incoming: true,
       outgoing: false,
     }
@@ -372,6 +386,6 @@ export {
   Message_options,
   SHARED_DOCS,
   SHARED_LINKS,
-  CallLogs,
-  MembersList
+  MembersList,
+  BookClubsList
 };

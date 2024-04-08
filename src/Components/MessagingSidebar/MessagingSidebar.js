@@ -25,9 +25,11 @@ function Sidebar() {
             </ul>
           </div>
         </div>
-        <DMs messagingView={selectedIcon}/>
-    </>
-  );
+        <div className="messagesContainer">
+          <DMs messagingView={selectedIcon}/>
+        </div>
+      </>
+    );
 }
 
 export default Sidebar;

@@ -3,11 +3,13 @@ import Phone from '../../Components/Chat/Images/phone.png';
 import Video from '../../Components/Chat/Images/video.png';
 
 //single chat element
-const ChatElement = ({id,name, img, msg, time,online, unread, onClick}) => {
+const ChatElement = ({id,name, img, msg, time,online, unread, onClick, selected}) => {
     return (
       <Box sx={{
         width: "100%",
         borderBottom: "1px solid #663A21", 
+        backgroundColor: selected ? '#663A2136' : 'transparent',
+        borderRadius: selected ? '25px' : '0px',
       }}
         p={2}
         onClick={onClick} // Attach onClick event handler

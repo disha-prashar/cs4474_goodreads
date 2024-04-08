@@ -12,45 +12,15 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { Button } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
-import { CaretDown, MagnifyingGlass, Phone, VideoCamera } from "phosphor-react";
-import { faker } from "@faker-js/faker";
+import { CaretDown } from "phosphor-react";
+import { KeyboardArrowDown } from "@mui/icons-material"; // Import the Material-UI caret icon
 import { useSearchParams } from "react-router-dom";
-import useResponsive from "../Hooks/useResponsive";
 import phoneIcon from '../../Components/Chat/Images/phone.png';
 import videoIcon from '../../Components/Chat/Images/video.png';
-import { MembersList, AuthorUpdatesList } from "../Data";
-import { click } from "@testing-library/user-event/dist/click";
-import { SampleChatAuthorUpdates, SampleChatBookClubs, SampleChatDMs } from "../Data";
+import { MembersList, AuthorUpdatesList, BookClubsList } from "../Data";
 
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  "& .MuiBadge-badge": {
-    backgroundColor: "#44b700",
-    color: "#44b700",
-    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-    "&::after": {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      borderRadius: "50%",
-      animation: "ripple 1.2s infinite ease-in-out",
-      border: "1px solid currentColor",
-      content: '""',
-    },
-  },
-  "@keyframes ripple": {
-    "0%": {
-      transform: "scale(.8)",
-      opacity: 1,
-    },
-    "100%": {
-      transform: "scale(2.4)",
-      opacity: 0,
-    },
-  },
-}));
 
 const Conversation_Menu = [
   {
@@ -70,7 +40,9 @@ const Conversation_Menu = [
 const ChatHeader = ({messagingView, clickedChat}) => {
   const [searchParams, setSearchParams] = useSearchParams();
   
-  const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedUser, setSelectedUser] = 
+    useState(messagingView === "author updates" ?
+      AuthorUpdatesList[0] : messagingView === "book clubs" ? BookClubsList["bookworms"] : MembersList[0]);
 
   const [conversationMenuAnchorEl, setConversationMenuAnchorEl] =
     React.useState(null);
@@ -86,22 +58,25 @@ const ChatHeader = ({messagingView, clickedChat}) => {
   };
   
   useEffect(() => {
-    if (clickedChat !== undefined) {
+    if (clickedChat === null) {
       setSelectedUser(
         messagingView === "author updates"
-          ? AuthorUpdatesList?.find(author => author.name === clickedChat) || null
-          : MembersList?.find(member => member.name === clickedChat) || null
-      )
+          ? AuthorUpdatesList[0] : messagingView === "book clubs" 
+            ? BookClubsList["bookworms"] 
+            : MembersList[0]
+      );
     }
     else {
       setSelectedUser(
         messagingView === "author updates"
-          ? AuthorUpdatesList[0] || null
-          : MembersList[0] || null
-      )
+          ? AuthorUpdatesList?.find(author => author.name === clickedChat) 
+            : messagingView === "book clubs" 
+              ? BookClubsList["bookworms"] 
+              : MembersList?.find(member => member.name === clickedChat)
+      );
     }
-    console.log("selected is", selectedUser);
   }, [clickedChat, messagingView]);
+
 
   return (
     <Box
@@ -110,56 +85,49 @@ const ChatHeader = ({messagingView, clickedChat}) => {
       sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
     >
       <Stack
-        onClick={() => {
-          searchParams.set("open", true);
-          setSearchParams(searchParams);
-        }}
         spacing={2}
         direction="row"
         alignItems={"center"}
       >
-        { messagingView == 'author updates' ?
+        { messagingView === 'author updates' ?
           (<></>) : 
-          (<img src={phoneIcon} style={{height: 50, width: 50}}></img>)
+          (<img src={phoneIcon} alt={"phonecall"} style={{height: 50, width: 50}}></img>)
         }
         <Box> 
-          {selectedUser &&(
+          {messagingView !== "book clubs" ?
+            (<Avatar sx={{ width: 80, height: 80 }} alt={selectedUser?.name} src={selectedUser?.img} />) : 
+              (<Stack direction="row" spacing={-3} alignItems="left">
+                {BookClubsList["bookworms"].map((entry) => ( 
+                  <Avatar key={entry.id} src={entry.img} alt={entry.name} sx={{ width: 80, height: 80, border: '1px solid #663A21'}} />
+                ))}
+              </Stack>
+            )
+          }
           <Stack direction="column" alignItems="center">
-            <StyledBadge
-              overlap="circular"
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "right",
-              }}
-              variant={messagingView === 'author updates' ? undefined : "dot"}
-            >
-            <Avatar sx={{ width: 80, height: 80 }} alt={selectedUser?.name} src={selectedUser?.img} />
-            </StyledBadge>
             <Typography variant="subtitle2" fontSize={18} fontWeight={"bold"} color={'#663A21'} fontFamily={"DM Sans"}>
-              {selectedUser?.name}
+              {messagingView !== "book clubs" ? selectedUser?.name : "Bookworms 🐛"}
             </Typography>
-          </Stack>)}
+          </Stack>
         </Box>
-        { messagingView == 'author updates' ?
+        { messagingView === 'author updates' ?
           (<></>) : 
-          (<img src={videoIcon} style={{height: 50, width: 50}}></img>)
+          (<img src={videoIcon} alt={"videocall"} style={{height: 50, width: 50}}></img>)
         }
       </Stack>
-      <IconButton
+      <Button
         id="conversation-positioned-button"
         aria-controls={
           openConversationMenu ? "conversation-positioned-menu" : undefined
         }
-        aria-haspopup="true"
+        style={{  boxShadow: 'none', backgroundColor: "#FFF9F0", borderColor:"#FFF9F0"}} 
         aria-expanded={openConversationMenu ? "true" : undefined}
         onClick={handleClickConversationMenu}>
           <CaretDown color={'#663A21'}/>
-        </IconButton>
+      </Button>
           <Menu
             MenuListProps={{
               "aria-labelledby": "fade-button",
             }}
-            TransitionComponent={Fade}
             id="conversation-positioned-menu"
             aria-labelledby="conversation-positioned-button"
             anchorEl={conversationMenuAnchorEl}
@@ -188,8 +156,10 @@ const ChatHeader = ({messagingView, clickedChat}) => {
                   </MenuItem>
                 ))}
               </Stack>
+              
             </Box>
           </Menu>
+          
     </Box>
   );
 };

@@ -1,45 +1,64 @@
 import { Box, IconButton, Stack, Typography, InputBase, Button, Divider, Avatar, Badge, selectClasses } from
   '@mui/material'
 import React, {useState, useEffect} from 'react';
-import { ChatList, AuthorUpdatesList, MembersList } from '../Data';
+import { ChatList, AuthorUpdatesList, MembersList, BookClubsList } from '../Data';
 import ChatElement from './ChatElement';
 import Footer from './Footer';
 import Header from './Header';
 import Message from './Message';
+import { click } from '@testing-library/user-event/dist/click';
+import GroupChatElement from './GroupChatElement';
 
 const DMs = ({messagingView}) => {
   
-  const [clickedChat, setClickedChat] = useState(null);
+  const [clickedChat, setClickedChat] = 
+    useState(messagingView === 'author updates' ? 
+      (AuthorUpdatesList[0]?.name) : (MembersList[0]?.name)
+    );
 
   useEffect(() => {
-    if (clickedChat === null) {
+    if (clickedChat == null) {
       if (messagingView === 'author updates') {
         setClickedChat(AuthorUpdatesList[0]?.name);
+      }
+      else if (messagingView === 'book clubs') {
+        setClickedChat("bookworms");
       }
       else {
         setClickedChat(MembersList[0]?.name);
       }
     }
-    else if (messagingView === 'author updates') {
-      setClickedChat(AuthorUpdatesList?.find(author => author.name === clickedChat)?.name);
-      {console.log("clicked is", clickedChat)}
+    else {
+      if ( messagingView === 'author updates') {
+        setClickedChat(AuthorUpdatesList.find(author => author.name === clickedChat)?.name);
+      }
+      else if (messagingView === 'book clubs') {
+        setClickedChat("bookworms");
+      }
+      else if (messagingView === 'direct messaging') {
+        setClickedChat(MembersList.find(author => author.name === clickedChat)?.name);
+      }
     }
-    else if (messagingView === 'DMs') {
-      setClickedChat(MembersList?.find(member => member.name === clickedChat)?.name);
-      {console.log("clicked is", clickedChat)}
-    }
-    
   }, [clickedChat, messagingView]);
+
+  useEffect(() => {
+    // Disable scrolling when the component mounts
+    document.body.style.overflow = 'hidden';
+  
+    // Re-enable scrolling when the component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
 
   const handleChatElementClick = (chat) => {
     setClickedChat(chat);
-    {console.log("set is ", chat)}
   };
   return (   
-    <> 
+    <div style={{display: "flex"}}>
     <Box sx={{
       position: "relative", 
-      width: 320, 
+      width: 400, 
       borderRight: "1px solid #663A21", 
       borderLeft: "1px solid #663A21",
     }}>
@@ -51,31 +70,36 @@ const DMs = ({messagingView}) => {
         </Stack>
         <Stack className='scrollbar' spacing={2} direction='column' sx={{flexGrow:1, overflow:'scroll', height:'87%'}}>
             <Stack spacing={1}>
-            {
-              messagingView === 'author updates' ?
+            {messagingView === 'author updates' ?
               (AuthorUpdatesList.map((el)=> {
-                return <ChatElement key={el.id} {...el} onClick={() => handleChatElementClick(el?.name)}/>
+                return <ChatElement key={el.id} {...el} onClick={() => handleChatElementClick(el?.name)} selected={el?.name === clickedChat}/>
               })) :
+              messagingView === 'book clubs' ? 
+                (<GroupChatElement onClick={() => handleChatElementClick("bookworms")} selected={"bookworms" === clickedChat}/>) :
               (MembersList.filter((el)=> !el.pinned).map((el)=>{
-                return <ChatElement key={el.id} {...el} onClick={() => handleChatElementClick(el?.name)}/>
+                return <ChatElement key={el.id} {...el} onClick={() => handleChatElementClick(el?.name)}selected={el.name === clickedChat}/>
               }))
             }
-          </Stack>
+          </Stack> 
         </Stack>
       </Stack>
     </Box>
-    <div style={{display: 'flex', flexDirection: 'column', flex: '1'}}>
+    <Box sx={{
+        position: "relative",
+        width: `calc(100vw - 400px)`,
+      }}>
+    
     <Stack height={'87%'} maxHeight={'100vh'} width={'auto'}>
         <Header messagingView={messagingView} clickedChat={clickedChat}/>
-        <Box className='scrollbar' width={"100%"} sx={{overflowY:'scroll'}}>
+          <Box className='scrollbar' width={"100%"} sx={{overflowY:'scroll'}}>
             <Message menu={true} messagingView={messagingView} clickedChat={clickedChat}/>
         </Box>
-        {/* {messagingView !== 'author updates' &&
+        {messagingView !== 'author updates' &&
           (<Footer />)
-        } */}
+        }
     </Stack>
-  </div>
-  </>
+    </Box>
+    </div>
   )
 }
 
