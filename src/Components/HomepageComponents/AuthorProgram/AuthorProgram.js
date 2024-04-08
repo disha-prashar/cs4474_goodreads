@@ -5,13 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { Button } from 'reactstrap';
 
 function AuthorProgramSection() {
-
-    let navigate = useNavigate(); 
-    const routeChange = () =>{ 
-        let path = `/Messages`; 
-        navigate(path);
-    }
-
     return (
         <div className="section">
             <div className="separator"></div>
@@ -20,10 +13,10 @@ function AuthorProgramSection() {
                 <p class="p2">Gain access to a massive audience of book lovers.</p>
                 <p class="p2">Goodreads is a great place to promote your books.</p>
                 <div>
-                    <Button className="authorProgramButton" onClick={routeChange}>
+                    <Button className="authorProgramButton">
                         Author program
                     </Button>
-                    <Button className="advertiseButton" onClick={routeChange}>
+                    <Button className="advertiseButton">
                         Advertise
                     </Button>
                 </div>

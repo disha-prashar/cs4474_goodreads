@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center; /* Center the carousel */
-  padding-top: 20px; /* Add some padding to the top to avoid overlapping */
+  padding-top: 120px; /* Add some padding to the top to avoid overlapping */
   position: relative; /* Add relative positioning */
   z-index: 1; /* Ensure the carousel is below the title */
 }
@@ -12,7 +12,7 @@
 .items-container {
   display: flex;
   gap: 20px; /* Adjust gap between items */
-  padding: 0; /* Remove any padding that might cause misalignment */
+  padding: 35px; /* Remove any padding that might cause misalignment */
 }
 
 .item {

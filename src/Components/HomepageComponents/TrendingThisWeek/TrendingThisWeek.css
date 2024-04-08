@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* Center the items */
-  padding: 20px 0; /* Add some padding to the top and bottom */
   width: 100%;
   margin-top: 0; /* Remove top margin to reduce space above the title */
 }
@@ -20,6 +19,9 @@
   margin-bottom: 20px; /* Add bottom margin to push the carousel down */
 }
 
+.trendingBooksContainer {
+  height: 600px;
+}
 /* Adjust the CSS for the carousel container if needed */
 .carousel {
   padding-top: 40px; /* Add padding on top to push the carousel down */
@@ -89,14 +91,6 @@
 }
 
 .bookAuthor {
-  font-family: "DM Sans", sans-serif;
-  font-size: 16px; /* Adjust to match layout */
-  color: #663A21; /* Consistent color scheme */
-  margin: 0 8px 8px; /* Adjust as needed */
-}
-
-{
-
   font-family: "DM Sans", sans-serif;
   font-size: 16px; /* Adjust to match layout */
   color: #663A21; /* Consistent color scheme */

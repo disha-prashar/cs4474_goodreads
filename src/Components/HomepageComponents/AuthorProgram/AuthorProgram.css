@@ -37,6 +37,10 @@
     background-color: #663A21;
     color: #FFF9F0;
 }
+.authorProgramButton:hover {
+    background-color:#AD9080;
+    transition: 0.1s;
+}
 
 .advertiseButton{
     margin-top: 20px;
@@ -44,4 +48,8 @@
     width: 150px;
     background-color: #FFF9F0;
     color: #663A21;
+}
+.advertiseButton:hover {
+    background-color:#AD9080;
+    transition: 0.1s;
 }
