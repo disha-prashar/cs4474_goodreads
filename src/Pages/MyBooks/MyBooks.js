@@ -144,7 +144,7 @@ function MyBooks() {
                                         overlay={generatePopover(book)}
                                     >
                                         <div className="card">
-                                            <img src={book.image} alt="book cover" />
+                                            <img src={book.image} alt="book cover" style={{width: 166, height: 243}}/>
                                             <Rating className="stars" value={book.rating} precision={0.05} size="small" readOnly />
                                         </div>
                                     </OverlayTrigger>
