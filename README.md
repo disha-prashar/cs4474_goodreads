@@ -1,8 +1,8 @@
-# cs4474_goodreads
+# CS4474 Project Group 14 GoodReads Redesign
 
 ## Installation
 
-# Install npm and node.js
+### Install npm and node.js
 In order to run this webapp, you must have Node.js and npm installed on your computer. The steps are provided at the following links for Windows and Mac.
 
 On Windows, follow the instructions [here](https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac#windows).
