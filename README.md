@@ -3,10 +3,12 @@
 ## Installation
 
 # Install npm and node.js
-In order to run this webapp, you must have Node.js and npm installed on your computer. The steps are provided at the following links for Windows and Mac:
+In order to run this webapp, you must have Node.js and npm installed on your computer. The steps are provided at the following links for Windows and Mac.
 
 On Windows, follow the instructions [here](https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac#windows).
 On Mac, follow the instructions [here](https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac#mac).
+
+Once those are installed, follow these steps in VSCode:
 
 ```bash
 # Clone the repository
