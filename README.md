@@ -8,7 +8,7 @@ In order to run this webapp, you must have Node.js and npm installed on your com
 On Windows, follow the instructions [here](https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac#windows).
 On Mac, follow the instructions [here](https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac#mac).
 
-Once those are installed, follow these steps in VSCode:
+Once those are installed, follow these steps in the terminal:
 
 ```bash
 # Clone the repository
